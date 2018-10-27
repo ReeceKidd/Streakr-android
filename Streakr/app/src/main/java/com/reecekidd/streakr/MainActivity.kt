@@ -21,8 +21,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
-
-    private var TAG = "TRIALCODE"
+    
     private var BASE_URL = "http://10.0.2.2:4040"
     private lateinit var usersAdapter: UsersAdapter
 
@@ -44,7 +43,6 @@ class MainActivity : AppCompatActivity() {
                 .subscribe({usersAdapter.setUsers(it.data)}, {
                     Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
                 }).dispose()
-        Log.v(TAG, usersAPI.toString())
 
     }
 
