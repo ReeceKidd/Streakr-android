@@ -6,7 +6,7 @@ class Streak( ){
     val streakName: String = ""
     val description: String = ""
     val createdBy: String = ""
-    val participants: Array<User>? = null
+    //val participants: Array<User>? = null
     val startDate: Date? = null
     val endDate = null
     val calendar: Calendar? = null
