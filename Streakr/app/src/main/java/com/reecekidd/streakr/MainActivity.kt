@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
@@ -33,6 +34,9 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
               val body = response?.body()?.string()
                 Log.v("HELICOPTER",body)
+                val gson = GsonBuilder().create()
+                val userFeed = gson.fromJson(body, Array<UserData>::class.java)
+                Log.v("HELICOPTER",userFeed.toString())
             }
             override fun onFailure(call: Call, e: IOException) {
                 println("Failed to execute request ${e.message}")
