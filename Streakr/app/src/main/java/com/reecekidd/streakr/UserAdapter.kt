@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.user_row.view.*
 class UserAdapter : RecyclerView.Adapter<UserViewHolder>() {
 
     val userNames = listOf<String>("First", "Second", "Third")
+    val userFullNames = listOf<String>("Ben", "Bob", "Bobby")
 
     override fun getItemCount(): Int {
         return userNames.size
@@ -21,7 +22,7 @@ class UserAdapter : RecyclerView.Adapter<UserViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.itemView.userFullName.text = userNames[position]
+        holder.itemView.userFullName.text = userFullNames[position]
         holder.itemView.userName.text = userNames[position]
     }
 }
