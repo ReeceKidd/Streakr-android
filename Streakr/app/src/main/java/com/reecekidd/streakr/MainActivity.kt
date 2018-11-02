@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     fun fetchJSON(){
         Log.v("Main Activity", "Attempting to fetch JSON")
 
-        val url = "http://10.0.2.2:4040/user"
+        val url = "http://10.0.2.2:4040/users"
 
         val request = Request.Builder().url(url).build()
         val client = OkHttpClient()
