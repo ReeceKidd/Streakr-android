@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.user_row.view.*
 
-class UserAdapter : RecyclerView.Adapter<UserViewHolder>() {
+class UserAdapter(val userFeed: UserData) : RecyclerView.Adapter<UserViewHolder>() {
 
     val userNames = listOf<String>("First", "Second", "Third")
     val userFullNames = listOf<String>("Ben", "Bob", "Bobby")

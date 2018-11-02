@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         usersRecyclerView.layoutManager = LinearLayoutManager(this)
-        usersRecyclerView.adapter = UserAdapter()
 
         fetchJSON()
     }
@@ -33,10 +32,9 @@ class MainActivity : AppCompatActivity() {
         val response = client.newCall(request).enqueue(object: Callback {
             override fun onResponse(call: Call, response: Response) {
               val body = response?.body()?.string()
-                Log.v("HELICOPTER",body)
                 val gson = GsonBuilder().create()
-                val userFeed = gson.fromJson(body, Array<UserData>::class.java)
-                Log.v("HELICOPTER",userFeed.toString())
+                val userFeed = gson.fromJson(body, UserFeed::class.java)
+                print("Test")
             }
             override fun onFailure(call: Call, e: IOException) {
                 println("Failed to execute request ${e.message}")
