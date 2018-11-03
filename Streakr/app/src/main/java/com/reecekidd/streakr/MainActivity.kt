@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         usersRecyclerView.layoutManager = LinearLayoutManager(this)
-        //usersRecyclerView.adapter = UserAdapter(userFeed = )
+
 
         fetchJSON()
     }
