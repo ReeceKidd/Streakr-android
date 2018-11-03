@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         usersRecyclerView.layoutManager = LinearLayoutManager(this)
+        //usersRecyclerView.adapter = UserAdapter(userFeed = )
 
         fetchJSON()
     }
@@ -28,18 +29,22 @@ class MainActivity : AppCompatActivity() {
 
         val request = Request.Builder().url(url).build()
         val client = OkHttpClient()
-        // Continue working through the tutorial.
-        val response = client.newCall(request).enqueue(object: Callback {
+        client.newCall(request).enqueue(object: Callback {
             override fun onResponse(call: Call, response: Response) {
               val body = response?.body()?.string()
                 val gson = GsonBuilder().create()
                 val userFeed = gson.fromJson(body, UserFeed::class.java)
-                print("Test")
+
+              runOnUiThread {
+                  usersRecyclerView.adapter = UserAdapter(userFeed)
+              }
             }
             override fun onFailure(call: Call, e: IOException) {
                 println("Failed to execute request ${e.message}")
             }
         })
+
+
 
     }
 

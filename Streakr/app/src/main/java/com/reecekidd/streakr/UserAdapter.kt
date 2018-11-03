@@ -6,13 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.user_row.view.*
 
-class UserAdapter(val userFeed: UserData) : RecyclerView.Adapter<UserViewHolder>() {
-
-    val userNames = listOf<String>("First", "Second", "Third")
-    val userFullNames = listOf<String>("Ben", "Bob", "Bobby")
+class UserAdapter(val userFeed: UserFeed) : RecyclerView.Adapter<UserViewHolder>() {
 
     override fun getItemCount(): Int {
-        return userNames.size
+        return userFeed.users.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
@@ -22,8 +19,8 @@ class UserAdapter(val userFeed: UserData) : RecyclerView.Adapter<UserViewHolder>
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.itemView.userFullName.text = userFullNames[position]
-        holder.itemView.userName.text = userNames[position]
+        holder.itemView.userFullName.text = userFeed.users[position].firstName
+        holder.itemView.userName.text = userFeed.users[position].userName
     }
 }
 
