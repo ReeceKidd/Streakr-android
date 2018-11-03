@@ -1,4 +1,6 @@
-package com.reecekidd.streakr
+package com.reecekidd.streakr.User
+
+import com.reecekidd.streakr.Streak
 
 class UserData(
         val firstName: String,
@@ -7,4 +9,9 @@ class UserData(
         val email: String,
         val streaks: Array<Streak>,
         val profilePicture: String
-)
+) {
+    fun getFullName(): String {
+    return "${this.firstName} ${this.lastName}"
+    }
+}
+

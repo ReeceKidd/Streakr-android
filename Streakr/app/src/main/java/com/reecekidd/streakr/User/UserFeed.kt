@@ -1,3 +1,3 @@
-package com.reecekidd.streakr
+package com.reecekidd.streakr.User
 
 class UserFeed(val users: List<UserData>)

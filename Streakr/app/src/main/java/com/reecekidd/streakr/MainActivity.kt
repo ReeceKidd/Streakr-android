@@ -1,11 +1,12 @@
 package com.reecekidd.streakr
 
-import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import com.google.gson.GsonBuilder
+import com.reecekidd.streakr.User.UserAdapter
+import com.reecekidd.streakr.User.UserFeed
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
               val body = response?.body()?.string()
                 val gson = GsonBuilder().create()
                 val userFeed = gson.fromJson(body, UserFeed::class.java)
-
+                Log.v("helicopter", body)
               runOnUiThread {
                   usersRecyclerView.adapter = UserAdapter(userFeed)
               }

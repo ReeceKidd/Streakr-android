@@ -1,9 +1,9 @@
-package com.reecekidd.streakr
+package com.reecekidd.streakr.User
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import com.reecekidd.streakr.R
 import kotlinx.android.synthetic.main.user_row.view.*
 
 class UserAdapter(val userFeed: UserFeed) : RecyclerView.Adapter<UserViewHolder>() {
@@ -19,11 +19,22 @@ class UserAdapter(val userFeed: UserFeed) : RecyclerView.Adapter<UserViewHolder>
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.itemView.userFullName.text = userFeed.users[position].firstName
-        holder.itemView.userName.text = userFeed.users[position].userName
+        val currentUser = getCurrentUser(position)
+        setFullNameOnViewHolder(holder, currentUser.getFullName())
+        setUserNameOnViewHolder(holder, currentUser.userName)
     }
+
+    private fun getCurrentUser(position: Int): UserData {
+        return userFeed.users[position]
+    }
+
+    private fun setFullNameOnViewHolder(holder: UserViewHolder, fullName: String){
+        holder.itemView.userFullName.text = fullName
+    }
+
+    private fun setUserNameOnViewHolder(holder: UserViewHolder, userName: String){
+        holder.itemView.userName.text = userName
+    }
+
 }
 
-class UserViewHolder(view: View): RecyclerView.ViewHolder(view) {
-
-}
