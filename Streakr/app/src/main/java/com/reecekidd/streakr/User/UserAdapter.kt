@@ -2,17 +2,18 @@ package com.reecekidd.streakr.User
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.view.menu.MenuView
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import com.reecekidd.streakr.R
 import kotlinx.android.synthetic.main.user_row.view.*
 
+
 class UserAdapter(val userFeed: UserFeed) : RecyclerView.Adapter<UserViewHolder>() {
+
 
     override fun getItemCount(): Int {
         return userFeed.users.size
@@ -29,13 +30,36 @@ class UserAdapter(val userFeed: UserFeed) : RecyclerView.Adapter<UserViewHolder>
     }
 
     private fun initaliseViewHolder(holder: UserViewHolder, currentUser: UserData ){
-        setFullNameTextView(getFullNameTextView(holder), currentUser.getFullName())
-        setUserNameTextView(getUserNameTextView(holder), currentUser.userName)
-        setOnClickListenerForViewProfileButton(getViewProfileButton(holder), getContextOfHolder(holder))
-        holder.itemView.addAsFriendButton.setOnClickListener {
-            Log.v("ADDASFRIENT", "clicked")
+        val itemView = getItemView(holder)
+        val context = getContextOfHolder(holder)
+        setElementsOfViewHolder(currentUser, itemView, context)
+    }
+
+    private fun setElementsOfViewHolder(currentUser: UserData, itemView: View, context: Context){
+        setFullNameTextView(getFullNameTextView(itemView), currentUser.getFullName())
+        setUserNameTextView(getUserNameTextView(itemView), currentUser.userName)
+        setOnClickListenerForViewProfileButton(getViewProfileButton(itemView), context)
+        setOnClickListenerForAddUserButton(getAddAsFriendButton(itemView), context)
+    }
+
+    private fun setOnClickListenerForViewProfileButton(viewProfileButton: Button, context: Context){
+        viewProfileButton.setOnClickListener {
+
+            startUserProfileActivity(context)
+            // NEED TO CAPTURE EITHER THE USER DATA OR THE ID HERE TO PASS IT TO THE USER PROFILE
+            // ACTVITY
+        }
+    }
+
+    private fun setOnClickListenerForAddUserButton(addUserButton: Button, context: Context){
+        addUserButton.setOnClickListener {
             // NEED TO MAKE THE REST API CALL HERE.
         }
+    }
+
+    private fun startUserProfileActivity(context: Context){
+        val intent = Intent(context, UserProfileActivity::class.java)
+        context.startActivity(intent)
     }
 
     private fun getContextOfHolder(holder: UserViewHolder): Context {
@@ -46,30 +70,24 @@ class UserAdapter(val userFeed: UserFeed) : RecyclerView.Adapter<UserViewHolder>
         return userFeed.users[position]
     }
 
-    private fun getViewProfileButton(holder: UserViewHolder): Button {
-        return holder.itemView.viewProfileButton
+    private fun getItemView(holder: UserViewHolder): View {
+        return holder.itemView
     }
 
-    private fun setOnClickListenerForViewProfileButton(viewProfileButton: Button, context: Context){
-        viewProfileButton.setOnClickListener {
-            Log.v("VIEW PROFILE", "clicked")
-            val intent = Intent(context, UserProfileActivity::class.java)
-            context.startActivity(intent)
-            // NEED TO CAPTURE EITHER THE USER DATA OR THE ID HERE TO PASS IT TO THE USER PROFILE
-            // ACTVITY
-        }
+    private fun getViewProfileButton(itemView: View): Button {
+        return itemView.viewProfileButton
     }
 
-    private fun getAddAsFriendButton(holder: UserViewHolder): Button {
-        return holder.itemView.addAsFriendButton
+    private fun getAddAsFriendButton(itemView: View): Button {
+        return itemView.addAsFriendButton
     }
 
-    private fun getFullNameTextView(holder: UserViewHolder): TextView {
-        return holder.itemView.userFullName
+    private fun getFullNameTextView(itemView: View): TextView {
+        return itemView.userFullName
     }
 
-    private fun getUserNameTextView(holder: UserViewHolder): TextView {
-        return holder.itemView.userName
+    private fun getUserNameTextView(itemView: View): TextView {
+        return itemView.userName
     }
 
     private fun setFullNameTextView(fullNameTextView: TextView, fullName: String){
