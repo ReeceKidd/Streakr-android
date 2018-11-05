@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.widget.Toast
 import com.google.gson.GsonBuilder
 import com.reecekidd.streakr.User.UserAdapter
 import com.reecekidd.streakr.User.UserFeed
