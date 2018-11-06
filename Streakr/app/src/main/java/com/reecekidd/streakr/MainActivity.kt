@@ -1,5 +1,6 @@
 package com.reecekidd.streakr
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -8,6 +9,7 @@ import android.widget.Toast
 import com.google.gson.GsonBuilder
 import com.reecekidd.streakr.User.UserAdapter
 import com.reecekidd.streakr.User.UserFeed
+import com.reecekidd.streakr.User.UserProfileActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
@@ -22,6 +24,9 @@ class MainActivity : AppCompatActivity() {
 
 
         fetchJSON()
+
+        val intent = Intent(this.applicationContext, LoginActivity::class.java)
+        this.applicationContext.startActivity(intent)
     }
 
     fun fetchJSON(){
