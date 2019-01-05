@@ -8,14 +8,15 @@
     tools:context=".RegisterActivity">
 
     <EditText
-        android:id="@+id/emailTextField"
+        android:id="@+id/emailTextFieldLogin"
         android:layout_width="320dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@color/cardview_dark_background"
+        android:textColor="@color/cardview_light_background"
         android:ems="10"
         android:hint="@string/hint_email"
         android:inputType="textPersonName"
@@ -23,27 +24,33 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.198"
+        tools:textColor="@color/cardview_light_background" />
 
 
     <EditText
-        android:id="@+id/passwordTextField"
+        android:id="@+id/passwordTextFieldLogin"
         android:layout_width="316dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@color/cardview_dark_background"
+        android:textColor="@color/cardview_light_background"
         android:ems="10"
         android:hint="@string/hint_password"
         android:inputType="textPassword"
         android:padding="10dp"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextField" />
+        app:layout_constraintTop_toBottomOf="@+id/emailTextFieldLogin"
+        tools:textColor="@color/cardview_light_background" />
 
     <Button
         android:id="@+id/loginButton"
@@ -57,7 +64,7 @@
         android:text="@string/text_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextFieldLogin" />
 
     <TextView
         android:id="@+id/registerTextView"

@@ -4,12 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log
-import com.google.gson.GsonBuilder
-import com.reecekidd.streakr.User.UserAdapter
-import com.reecekidd.streakr.User.UserFeed
 
 import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_user_feed.*
 import okhttp3.*
 import java.io.IOException
 
@@ -28,9 +24,9 @@ class RegisterActivity : AppCompatActivity() {
 
         registerButton.setOnClickListener {
             Log.d(tag, "Registration button clicked")
-            val userNameText = userNameTextField.text.toString()
-            val emailText = emailTextField.text.toString()
-            val passwordText = passwordTextField.text.toString()
+            val userNameText = userNameTextFieldRegistration.text.toString()
+            val emailText = emailTextFieldRegistration.text.toString()
+            val passwordText = passwordTextFieldRegistration.text.toString()
             Log.d(tag, "Username: $userNameText")
             Log.d(tag, "Email $emailText")
             Log.d(tag, "Password $passwordText")
@@ -52,9 +48,9 @@ class RegisterActivity : AppCompatActivity() {
             }
         	""".trimIndent()
         Log.d("Registration", "json: $json")
-        val body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)
+        val requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)
 
-        val request = Request.Builder().url(url).post(body).build()
+        val request = Request.Builder().url(url).post(requestBody).build()
         val client = OkHttpClient()
         client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {
