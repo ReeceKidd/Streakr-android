@@ -1,11 +1,15 @@
 package com.reecekidd.streakr
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log
+import android.widget.Toast
+
 
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_user_feed.*
 import okhttp3.*
 import java.io.IOException
 
@@ -27,12 +31,14 @@ class LoginActivity : AppCompatActivity() {
             val passwordText = passwordTextFieldLogin.text.toString()
             Log.d(tag, "Email $emailText")
             Log.d(tag, "Password $passwordText")
-            makeLoginCall(emailText, passwordText)
+            makeLoginCall(emailText, passwordText, this.applicationContext)
         }
 
     }
 
-    private fun makeLoginCall(emailText: String, passwordText: String) {
+    //MAKE TOAST SHOW FOR ERROR RESPONSE OR LOOK AT HOW TO HANDLE ERRORS IN OKHTTP>
+
+    private fun makeLoginCall(emailText: String, passwordText: String, context: Context) {
         val tag = "LoginAPICall"
         Log.d(tag, "Attempting to login user")
         Log.d(tag, "emailText: $emailText")
@@ -50,16 +56,23 @@ class LoginActivity : AppCompatActivity() {
         Log.d(tag, requestBody.toString())
         val request = Request.Builder().url(url).post(requestBody).build()
         val client = OkHttpClient()
-        client.newCall(request).enqueue(object : Callback {
+        val serverResponse = client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {
                 val body = response?.body()?.string()
-                Log.d(tag, "Body : $body")
+                if(response?.isSuccessful){
+
+                }
+                runOnUiThread {
+                   Toast.makeText(context, body, Toast.LENGTH_LONG).show()
+                    Log.d(tag, "Made it")
+                }
             }
 
             override fun onFailure(call: Call, e: IOException) {
                 Log.d(tag, "Failed to execute request ${e.message}")
             }
         })
+        Log.d(tag, "serverResponse $serverResponse")
 
 
     }
