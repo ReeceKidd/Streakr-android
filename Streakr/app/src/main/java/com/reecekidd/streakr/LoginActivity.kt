@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log
 import android.widget.Toast
+import com.beust.klaxon.Klaxon
 
 
 import kotlinx.android.synthetic.main.activity_login.*
@@ -36,7 +37,6 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    //MAKE TOAST SHOW FOR ERROR RESPONSE OR LOOK AT HOW TO HANDLE ERRORS IN OKHTTP>
 
     private fun makeLoginCall(emailText: String, passwordText: String, context: Context) {
         val tag = "LoginAPICall"
@@ -58,13 +58,16 @@ class LoginActivity : AppCompatActivity() {
         val client = OkHttpClient()
         val serverResponse = client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {
-                val body = response?.body()?.string()
-                if(response?.isSuccessful){
+                val body = response.body()?.string()
+                val parsedResponse = Klaxon().parse<ServerResponse>("""$body""")
+                val message = parsedResponse?.message
+                if(response.isSuccessful){
 
                 }
                 runOnUiThread {
-                   Toast.makeText(context, body, Toast.LENGTH_LONG).show()
-                    Log.d(tag, "Made it")
+
+                  Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+
                 }
             }
 
