@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import com.beust.klaxon.Klaxon
 
@@ -56,28 +57,31 @@ class LoginActivity : AppCompatActivity() {
         Log.d(tag, requestBody.toString())
         val request = Request.Builder().url(url).post(requestBody).build()
         val client = OkHttpClient()
-        val serverResponse = client.newCall(request).enqueue(object : Callback {
+        client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {
                 val body = response.body()?.string()
-                val parsedResponse = Klaxon().parse<ServerResponse>("""$body""")
+                if (response.isSuccessful) {
+                    val parsedResponse = Klaxon().parse<LoginServerResponse>("""$body""")
+                    val message = parsedResponse?.message
+                    runOnUiThread {
+                        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                    }
+                    val token = parsedResponse?.token
+                    
+                    return
+                }
+                val parsedResponse = Klaxon().parse<ErrorServerResponse>("""$body""")
                 val message = parsedResponse?.message
-                if(response.isSuccessful){
-
-                }
                 runOnUiThread {
-
-                  Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-
+                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
                 }
+
             }
 
             override fun onFailure(call: Call, e: IOException) {
                 Log.d(tag, "Failed to execute request ${e.message}")
             }
         })
-        Log.d(tag, "serverResponse $serverResponse")
-
-
     }
 
 }
