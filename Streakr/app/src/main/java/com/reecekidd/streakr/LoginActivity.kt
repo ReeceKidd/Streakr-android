@@ -62,12 +62,12 @@ class LoginActivity : AppCompatActivity() {
                 val body = response.body()?.string()
                 if (response.isSuccessful) {
                     val parsedResponse = Klaxon().parse<LoginServerResponse>("""$body""")
+                    val jsonWebToken = parsedResponse?.jsonWebToken
+                    saveJsonWebTokenInSharedPreferences(jsonWebToken!!)
                     val message = parsedResponse?.message
                     runOnUiThread {
                         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
                     }
-                    val token = parsedResponse?.token
-                    
                     return
                 }
                 val parsedResponse = Klaxon().parse<ErrorServerResponse>("""$body""")
@@ -82,6 +82,15 @@ class LoginActivity : AppCompatActivity() {
                 Log.d(tag, "Failed to execute request ${e.message}")
             }
         })
+    }
+
+    fun saveJsonWebTokenInSharedPreferences(jsonWebToken: String){
+        val sharedPrefences = getSharedPreferences(
+                getString(R.string.shared_preferences_api_keys), Context.MODE_PRIVATE)
+        with(sharedPrefences.edit()){
+            putString(getString(R.string.json_web_token), jsonWebToken)
+            apply()
+        }
     }
 
 }

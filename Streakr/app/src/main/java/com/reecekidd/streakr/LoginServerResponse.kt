@@ -1,3 +1,3 @@
 package com.reecekidd.streakr
 
-class LoginServerResponse(var token: String, var message: String)
+class LoginServerResponse(var jsonWebToken: String, var message: String)
