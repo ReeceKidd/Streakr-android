@@ -20,7 +20,7 @@ class UserFeedActivity : AppCompatActivity() {
         usersRecyclerView.layoutManager = LinearLayoutManager(this)
 
 
-        fetchJSON()
+       // fetchJSON()
 
 
     }

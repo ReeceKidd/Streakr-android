@@ -50,7 +50,7 @@ class RegisterActivity : AppCompatActivity() {
         Log.d("Registration", "json: $json")
         val requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)
 
-        val request = Request.Builder().url(url).post(requestBody).build()
+       val request = Request.Builder().url(url).post(requestBody).build()
         val client = OkHttpClient()
         client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {

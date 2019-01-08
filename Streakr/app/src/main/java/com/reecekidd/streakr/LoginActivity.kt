@@ -5,13 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
 import com.beust.klaxon.Klaxon
 
 
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_user_feed.*
 import okhttp3.*
 import java.io.IOException
 
@@ -66,7 +64,8 @@ class LoginActivity : AppCompatActivity() {
                     saveJsonWebTokenInSharedPreferences(jsonWebToken!!)
                     val message = parsedResponse?.message
                     runOnUiThread {
-                        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                        val intent = Intent(context, HomeActivity::class.java)
+                        context.startActivity(intent)
                     }
                     return
                 }
@@ -84,10 +83,10 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    fun saveJsonWebTokenInSharedPreferences(jsonWebToken: String){
-        val sharedPrefences = getSharedPreferences(
+    private fun saveJsonWebTokenInSharedPreferences(jsonWebToken: String){
+        val sharedPreferences = getSharedPreferences(
                 getString(R.string.shared_preferences_api_keys), Context.MODE_PRIVATE)
-        with(sharedPrefences.edit()){
+        with(sharedPreferences.edit()){
             putString(getString(R.string.json_web_token), jsonWebToken)
             apply()
         }

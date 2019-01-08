@@ -39,6 +39,10 @@
         <activity
             android:name=".UserFeedActivity"
             android:label="@string/title_user_feed"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
