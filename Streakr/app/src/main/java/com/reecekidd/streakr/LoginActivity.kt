@@ -62,7 +62,6 @@ class LoginActivity : AppCompatActivity() {
                     val parsedResponse = Klaxon().parse<LoginServerResponse>("""$body""")
                     val jsonWebToken = parsedResponse?.jsonWebToken
                     saveJsonWebTokenInSharedPreferences(jsonWebToken!!)
-                    val message = parsedResponse?.message
                     runOnUiThread {
                         val intent = Intent(context, HomeActivity::class.java)
                         context.startActivity(intent)
@@ -85,7 +84,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun saveJsonWebTokenInSharedPreferences(jsonWebToken: String){
         val sharedPreferences = getSharedPreferences(
-                getString(R.string.shared_preferences_api_keys), Context.MODE_PRIVATE)
+                getString(R.string.shared_preferences_api_key), Context.MODE_PRIVATE)
         with(sharedPreferences.edit()){
             putString(getString(R.string.json_web_token), jsonWebToken)
             apply()

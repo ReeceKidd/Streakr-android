@@ -41,7 +41,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="shared_preferences_api_keys">Shared Prefences API Keys</string>
+    <string name="shared_preferences_api_key">Shared Prefences API Keys</string>
     <string name="json_web_token">Json Web Token</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_home">HomeActivity</string>
