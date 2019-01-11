@@ -22,44 +22,30 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.shared_preferences_api_key), Context.MODE_PRIVATE)
         val jsonWebToken = sharedPreferences.getString(getString(R.string.json_web_token), null)
         if(jsonWebToken.isNotEmpty()){
-            val isJsonWebTokenValidRequest = getJsonWebTokenRequest(jsonWebToken)
-            val client = OkHttpClient()
-            client.newCall(isJsonWebTokenValidRequest).enqueue(object : Callback {
-                override fun onResponse(call: Call, response: Response) {
-                    val body = response.body()?.string()
-                    if (response.isSuccessful) {
-                        runOnUiThread {
-                            val homeActivityIntent = Intent(applicationContext, HomeActivity::class.java)
-                            applicationContext.startActivity(homeActivityIntent)
-                        }
-                        return
-                    }
-                    val parsedResponse = Klaxon().parse<ErrorServerResponse>("""$body""")
-                    val message = parsedResponse?.message
-                    runOnUiThread {
-                        Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
-                        val loginActivityIntent = Intent(applicationContext, LoginActivity::class.java)
-                        applicationContext.startActivity(loginActivityIntent)
-                    }
-                }
-
-                override fun onFailure(call: Call, e: IOException) {
-                    Toast.makeText(applicationContext, e.message, Toast.LENGTH_LONG).show()
-                    Log.d(tag, "Failed to execute request ${e.message}")
-                }
-            })
-
+            Log.d(tag, "jsonWebToken is not empty")
+            val homeAcvitityIntent = Intent(this.applicationContext, HomeActivity::class.java)
+            this.applicationContext.startActivity(homeAcvitityIntent)
+            return
         }
 
+        Log.d(tag, "startingRegisterActivity")
         val registerAcvitityIntent = Intent(this.applicationContext, RegisterActivity::class.java)
         this.applicationContext.startActivity(registerAcvitityIntent)
     }
 
-    private fun getJsonWebTokenRequest(jsonWebToken: String): Request {
-        val url = "http://10.0.2.2:4040/json-web-token/$jsonWebToken"
-        Log.d(tag, "url: $url")
-        val request = Request.Builder().url(url).build()
-        return request
+    override fun onStart() {
+        super.onStart()
+        Log.d("MainActivity", "onstart")
     }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("MainActivity", "onRestart")
+    }
+
+
+    // I think this is a lifecyce hook issue I don't think it's on create that's being called but on restart.
+
+
 
 }
