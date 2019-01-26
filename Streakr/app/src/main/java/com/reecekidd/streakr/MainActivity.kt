@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         val jsonWebToken = sharedPreferences.getString(getString(R.string.json_web_token), null)
         if(jsonWebToken.isNotEmpty()){
             Log.d(tag, "jsonWebToken is not empty")
+            // Need to verify this token with the server.
+
             val homeAcvitityIntent = Intent(this.applicationContext, HomeActivity::class.java)
             this.applicationContext.startActivity(homeAcvitityIntent)
             return
@@ -42,10 +44,5 @@ class MainActivity : AppCompatActivity() {
         super.onRestart()
         Log.d("MainActivity", "onRestart")
     }
-
-
-    // I think this is a lifecyce hook issue I don't think it's on create that's being called but on restart.
-
-
 
 }
