@@ -49,4 +49,11 @@
     <string name="json_web_token">Json Web Token</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_create_streak">CreateStreak</string>
+    <!-- Create a streak -->
+    <string name="streak_name">Streak name</string>
+    <string name="streak_description">Streak description</string>
+    <string name="success_criteria"> Success criteria</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="solo">Go solo</string>
 </resources>
