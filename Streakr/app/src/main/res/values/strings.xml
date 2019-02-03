@@ -54,6 +54,12 @@
     <string name="streak_name">Streak name</string>
     <string name="streak_description">Streak description</string>
     <string name="success_criteria"> Success criteria</string>
-    <string name="invite_friends">Invite Friends</string>
-    <string name="solo">Go solo</string>
+    <string name="who_is_involved">Who is involved?</string>
+    <string name="friends">Friends</string>
+    <string name="just_me">Just Me</string>
+    <string name="create_streak">Create Streak</string>
+    <!-- Button related strings -->
+    <string name="submit">Submit</string>
+
+
 </resources>
