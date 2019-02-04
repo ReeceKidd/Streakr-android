@@ -1,0 +1,16 @@
+package com.reecekidd.streakr
+
+import android.os.Bundle
+import android.support.design.widget.Snackbar
+import android.support.v7.app.AppCompatActivity;
+
+import kotlinx.android.synthetic.main.activity_friend_streak_reward.*
+
+class FriendStreakRewardActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_friend_streak_reward)
+    }
+
+}

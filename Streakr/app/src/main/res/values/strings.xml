@@ -58,8 +58,20 @@
     <string name="friends">Friends</string>
     <string name="just_me">Just Me</string>
     <string name="create_streak">Create Streak</string>
+    <!-- Friend Streak Reward or Forfeit -->
+    <string name="reward_or_forfeit"> Do you want to set a reward for the winner of the streak? </string>
+
     <!-- Button related strings -->
     <string name="submit">Submit</string>
+    <string name="next">Next</string>
+    <string name="title_activity_streak_reward">StreakRewardActivity</string>
+    <string name="title_activity_solo_streak_reward">SoloStreakRewardActivity</string>
+    <string name="title_activity_streak_end_date">StreakEndDateActivity</string>
+    <string name="title_activity_friend_streak_reward_or_forfeit">
+        FriendStreakRewardOrForfeitActivity
+    </string>
+    <string name="title_activity_friend_streak_reward">FriendStreakRewardActivity</string>
+    <string name="title_activity_friend_streak_forfeit">FriendStreakForfeitActivity</string>
 
 
 </resources>
