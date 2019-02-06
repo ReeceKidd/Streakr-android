@@ -34,6 +34,9 @@ class CreateStreak : AppCompatActivity() {
                 val intent = Intent(this.applicationContext, FriendStreakRewardActivity::class.java)
                 this.applicationContext.startActivity(intent)
             }
+
+            val intent = Intent(this.applicationContext, SoloForfeitActivity::class.java)
+            this.applicationContext.startActivity(intent)
         }
 
 

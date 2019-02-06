@@ -1,0 +1,7 @@
+1) What is the proper way to organise a strings.xml file?
+2) Am I switching to different activities using intents the correct way?
+3) How should a network call be made correctly?
+4) Is is ok that everything is a constraint layout?
+5) Can we do a general audit of the project to point out what needs to be improved please.
+6) Is it a good practice to name the strings in the strings.xml like I have "do_you_want_to_set_a_forfeit" etc.
+7) Is there supposed to be a class that is responsible for what activity is fired next, a prime example being in the createStreak screen or is this just handled through if statements. 

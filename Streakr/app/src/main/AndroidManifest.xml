@@ -16,9 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".SoloRewardActivity"
+            android:label="@string/title_activity_solo_reward"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".SoloForfeitActivity"
+            android:label="@string/title_activity_solo_forfeit"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".FriendStreakForfeitActivity"
             android:label="@string/title_activity_friend_streak_forfeit"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".User.FriendStreakForfeitActivity"
             android:label="@string/title_activity_friend_streak_forfeit"
