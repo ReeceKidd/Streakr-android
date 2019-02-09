@@ -21,10 +21,8 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences(
                 getString(R.string.shared_preferences_api_key), Context.MODE_PRIVATE)
         val jsonWebToken = sharedPreferences.getString(getString(R.string.json_web_token), null)
-        if(jsonWebToken.isNotEmpty()){
+        if(jsonWebToken != null && jsonWebToken.isNotEmpty()){
             Log.d(tag, "jsonWebToken is not empty")
-            // Need to verify this token with the server.
-
             val homeAcvitityIntent = Intent(this.applicationContext, HomeActivity::class.java)
             this.applicationContext.startActivity(homeAcvitityIntent)
             return

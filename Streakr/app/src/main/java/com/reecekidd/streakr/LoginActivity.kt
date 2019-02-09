@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
         Log.d(tag, "emailText: $emailText")
         Log.d(tag, "passwordText: $passwordText")
 
-        val url = "http://10.0.2.2:4040/user/login"
+        val url = "http://10.0.2.2:4040/auth/login"
 
         val json = """ {
           "email": "$emailText",

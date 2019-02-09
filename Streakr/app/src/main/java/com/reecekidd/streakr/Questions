@@ -4,4 +4,18 @@
 4) Is is ok that everything is a constraint layout?
 5) Can we do a general audit of the project to point out what needs to be improved please.
 6) Is it a good practice to name the strings in the strings.xml like I have "do_you_want_to_set_a_forfeit" etc.
-7) Is there supposed to be a class that is responsible for what activity is fired next, a prime example being in the createStreak screen or is this just handled through if statements. 
+7) Is there supposed to be a class that is responsible for what activity is fired next, a prime example being in the createStreak screen or is this just handled through if statements.
+8) Is this the correct way to handle an undefined Json Web Token?
+
+val sharedPreferences = getSharedPreferences(
+                getString(R.string.shared_preferences_api_key), Context.MODE_PRIVATE)
+        val jsonWebToken = sharedPreferences.getString(getString(R.string.json_web_token), null)
+        if(jsonWebToken != null && jsonWebToken.isNotEmpty()){
+            Log.d(tag, "jsonWebToken is not empty")
+            // Need to verify this token with the server.
+
+            val homeAcvitityIntent = Intent(this.applicationContext, HomeActivity::class.java)
+            this.applicationContext.startActivity(homeAcvitityIntent)
+            return
+        }
+

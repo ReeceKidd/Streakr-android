@@ -20,6 +20,7 @@ class RegisterActivity : AppCompatActivity() {
             Log.d(tag, "Login button tclicked")
             val intent = Intent(this.applicationContext, LoginActivity::class.java)
             this.applicationContext.startActivity(intent)
+            startLoginActivity()
         }
 
         registerButton.setOnClickListener {
@@ -31,9 +32,15 @@ class RegisterActivity : AppCompatActivity() {
             Log.d(tag, "Email $emailText")
             Log.d(tag, "Password $passwordText")
             makeRegistrationCall(userNameText, emailText, passwordText)
+           startLoginActivity()
         }
 
 
+    }
+
+    private fun startLoginActivity(){
+        val intent = Intent(this.applicationContext, LoginActivity::class.java)
+        this.applicationContext.startActivity(intent)
     }
 
     private fun makeRegistrationCall(userNameText: String, emailText: String, passwordText: String) {
