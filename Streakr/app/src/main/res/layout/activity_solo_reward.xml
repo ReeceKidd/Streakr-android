@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/soloForfeitConstraintLayout"
+    android:id="@+id/soloRewardConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SoloRewardActivity">
@@ -11,17 +11,63 @@
         android:id="@+id/doYouWantToSetARewardTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/do_you_want_to_set_a_forfeit"
+        android:text="@string/solo_streak_reward_headline"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textColor="@color/cardview_dark_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintVertical_bias="0.061" />
+
+    <EditText
+        android:id="@+id/soloRewardDescription"
+        android:layout_width="288dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/cardview_dark_background"
+        android:ems="10"
+        android:hint="@string/solo_reward_description"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354"
+        tools:textColor="@color/cardview_light_background" />
+
+    <Button
+        android:id="@+id/soloRewardSkipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#035f1f"
+        android:text="@string/skip"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="404dp" />
+
+    <Button
+        android:id="@+id/soloRewardSubmitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#035f1f"
+        android:text="@string/submit"
+        app:layout_constraintBaseline_toBaselineOf="@+id/soloRewardSkipButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/soloRewardSkipButton" />
+
+
 
 </android.support.constraint.ConstraintLayout>

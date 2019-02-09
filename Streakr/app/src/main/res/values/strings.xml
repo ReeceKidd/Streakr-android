@@ -61,9 +61,11 @@
     <!-- Friend Streak Reward or Forfeit -->
     <string name="do_you_want_to_set_a_reward"> Do you want to set a reward for the winner of the streak? </string>
     <!-- Solo Forfeit -->
-    <string name="do_you_want_to_set_a_forfeit"> Do you want to set a forfeit for yourself? </string>
+    <string name="solo_streak_forfeit_headline"> Do you want to set a forfeit for yourself? </string>
+    <string name="solo_streak_reward_headline"> Do you want to set a reward for yourself? </string>
     <!-- Button related strings -->
     <string name="submit">Submit</string>
+    <string name="skip">Skip</string>
     <string name="next">Next</string>
     <string name="title_activity_streak_reward">StreakRewardActivity</string>
     <string name="title_activity_solo_streak_reward">SoloStreakRewardActivity</string>
@@ -75,6 +77,9 @@
     <string name="title_activity_friend_streak_forfeit">FriendStreakForfeitActivity</string>
     <string name="title_activity_solo_forfeit">SoloForfeitActivity</string>
     <string name="title_activity_solo_reward">SoloRewardActivity</string>
+    <string name="solo_forfeit_description">Solo forfeit description</string>
+    <string name="solo_reward_description">Solo reward description</string>
+    <string name="title_activity_streak_created">StreakCreatedActivity</string>
 
 
 </resources>
