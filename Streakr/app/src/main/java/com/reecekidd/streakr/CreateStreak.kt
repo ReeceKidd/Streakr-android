@@ -35,12 +35,14 @@ class CreateStreak : AppCompatActivity() {
                 this.applicationContext.startActivity(intent)
             }
 
-            val intent = Intent(this.applicationContext, SoloForfeitActivity::class.java)
+            // Do the netowork call here as the Streak is being created. And then pass the values to
+            // the next activity. 
+
+            val intent = Intent(this.applicationContext, SoloStreakCreatedActivity::class.java)
             this.applicationContext.startActivity(intent)
         }
 
 
-        // Do the network call here if the fields aren't empty
     }
 
 }

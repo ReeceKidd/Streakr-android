@@ -58,6 +58,11 @@
     <string name="friends">Friends</string>
     <string name="just_me">Just Me</string>
     <string name="create_streak">Create Streak</string>
+    <!-- Solo Streak Created -->
+    <string name="solo_streak_created_headline"> You created a solo streak! </string>
+    <string name="solo_streak_details">Solo Streak Details </string>
+    <string name="solo_streak_name"> Solo Streak Name</string>
+    <string name="solo_streak_description"> Solo Streak Description </string>
     <!-- Friend Streak Reward or Forfeit -->
     <string name="do_you_want_to_set_a_reward"> Do you want to set a reward for the winner of the streak? </string>
     <!-- Solo Forfeit -->
@@ -80,6 +85,7 @@
     <string name="solo_forfeit_description">Solo forfeit description</string>
     <string name="solo_reward_description">Solo reward description</string>
     <string name="title_activity_streak_created">StreakCreatedActivity</string>
+    <string name="title_activity_solo_streak_created">SoloStreakCreatedActivity</string>
 
 
 </resources>
