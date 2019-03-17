@@ -1,16 +1,41 @@
 1) What is the proper way to organise a strings.xml file?
+
+Profile string, (name of screen) profile_underscore. Generally per activity as it is generally screen.
+Duplication is ok for the flexibility. profile_submit is ok.
+
 2) Am I switching to different activities using intents the correct way?
+
+Process is still running. Background isn't going to be killed recently. Process is allowed to run,
+you don't do any UI when the activity goes to the background. YOu need to make sure on pause() on stop()
+stops all network or background operations.
+
+Coroutines are looking.
+
+You want an API client class to handle the network requests. Api client shouldn't do any thread.
+
+Retrfoit is a way of defining request. MVRVM use the classes. Retrofit is important.
+
+LOOK into link John sent.
+
+Google code lab how to do Android architecture components.
+
 3) How should a network call be made correctly?
+
 4) Is is ok that everything is a constraint layout?
+
+You can lock to a portrait.
+
 5) Can we do a general audit of the project to point out what needs to be improved please.
-6) Is it a good practice to name the strings in the strings.xml like I have "do_you_want_to_set_a_forfeit" etc.
+6) Is it a good practice to name the strings in the strings.xml like I have "set_a_forfeit_title" etc.
+
+-- DO it the way in the question.
 7) Is there supposed to be a class that is responsible for what activity is fired next, a prime example being in the createStreak screen or is this just handled through if statements.
 8) Is this the correct way to handle an undefined Json Web Token?
 
 val sharedPreferences = getSharedPreferences(
                 getString(R.string.shared_preferences_api_key), Context.MODE_PRIVATE)
         val jsonWebToken = sharedPreferences.getString(getString(R.string.json_web_token), null)
-        if(jsonWebToken != null && jsonWebToken.isNotEmpty()){
+        if(jsonWebToken != null){
             Log.d(tag, "jsonWebToken is not empty")
             // Need to verify this token with the server.
 
@@ -18,4 +43,11 @@ val sharedPreferences = getSharedPreferences(
             this.applicationContext.startActivity(homeAcvitityIntent)
             return
         }
+
+
+        Packages per feature. Everything related to that feature goes into the package.
+Ui, Api, APackage name ui.home
+
+Repository pattern, screens don't give a shit so you have a repository that decides. It.
+
 

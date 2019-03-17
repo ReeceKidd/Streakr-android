@@ -36,7 +36,6 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-
     private fun makeLoginCall(emailText: String, passwordText: String, context: Context) {
         val tag = "LoginAPICall"
         Log.d(tag, "Attempting to login user")

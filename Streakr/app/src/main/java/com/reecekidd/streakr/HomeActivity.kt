@@ -13,8 +13,8 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        createAStreakButton.setOnClickListener {
-            val intent = Intent(this.applicationContext, CreateStreak::class.java)
+        createASoloStreakButton.setOnClickListener {
+            val intent = Intent(this.applicationContext, CreateSoloStreak::class.java)
             this.applicationContext.startActivity(intent)
         }
     }

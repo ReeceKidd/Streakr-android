@@ -8,36 +8,50 @@
     tools:context=".HomeActivity">
 
     <Button
+        android:id="@+id/createASoloStreakButton"
+        style="@android:style/Widget.DeviceDefault.Button.Toggle"
+        android:layout_width="304dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:background="#035f1f"
+        android:text="@string/create_a__solo_streak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/createAGroupStreakButton"
+        style="@android:style/Widget.DeviceDefault.Button.Toggle"
+        android:layout_width="304dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="#035f1f"
+        android:text="@string/create_a_group_streak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createASoloStreakButton" />
+
+    <Button
         android:id="@+id/manageStreaksButton"
         style="@android:style/Widget.DeviceDefault.Button.Toggle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="#035f1f"
         android:text="@string/manage_streaks"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createAStreakButton" />
+        app:layout_constraintTop_toBottomOf="@+id/createAGroupStreakButton" />
 
-    <Button
-        android:id="@+id/createAStreakButton"
-        style="@android:style/Widget.DeviceDefault.Button.Toggle"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#035f1f"
-        android:text="@string/create_a_streak"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079" />
 
     <Button
         android:id="@+id/addAFriendButton"
@@ -45,11 +59,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="#035f1f"
         android:text="@string/add_a_friend"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/manageStreaksButton" />
 
@@ -59,7 +74,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="#035f1f"
