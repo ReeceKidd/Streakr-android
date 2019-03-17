@@ -15,7 +15,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/create_a_solo_streak"
+        android:text="@string/create_solo_streak"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textColor="@color/cardview_dark_background"
         app:layout_constraintBottom_toBottomOf="parent"

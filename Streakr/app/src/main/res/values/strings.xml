@@ -41,8 +41,8 @@
         completions."
     </string>
     <!-- Strings related to home page -->
-    <string name="create_a_solo_streak">Create a solo streak</string>
-    <string name="create_a_group_streak"> Create a group streak</string>
+    <string name="create_solo_streak">Create Solo Streak</string>
+    <string name="create_group_streak"> Create Group Streak</string>
     <string name="add_a_friend">Add a friend</string>
     <string name="view_profile">View profile</string>
     <string name="manage_streaks">Manage Streaks</string>

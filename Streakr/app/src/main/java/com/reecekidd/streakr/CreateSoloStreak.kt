@@ -2,17 +2,13 @@ package com.reecekidd.streakr
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.beust.klaxon.Klaxon
 
-import kotlinx.android.synthetic.main.activity_create_streak.*
+import kotlinx.android.synthetic.main.activity_create_solo_streak.*
 import okhttp3.*
 import java.io.IOException
 
@@ -22,7 +18,7 @@ class CreateSoloStreak : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create_streak)
+        setContentView(R.layout.activity_create_solo_streak)
         // Need to get the user ID from the json web token in shared preferences
         val sharedPreferences = getSharedPreferences(
                 getString(R.string.shared_preferences_api_key), Context.MODE_PRIVATE)
