@@ -87,6 +87,7 @@
     <string name="solo_reward_description">Solo reward description</string>
     <string name="title_activity_streak_created">StreakCreatedActivity</string>
     <string name="title_activity_solo_streak_created">SoloStreakCreatedActivity</string>
+    <string name="title_activity_create_group_streak">CreateGroupStreak</string>
 
 
 </resources>

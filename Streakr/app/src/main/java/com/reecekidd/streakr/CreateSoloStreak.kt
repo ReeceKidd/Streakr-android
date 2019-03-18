@@ -24,7 +24,7 @@ class CreateSoloStreak : AppCompatActivity() {
                 getString(R.string.shared_preferences_api_key), Context.MODE_PRIVATE)
         val jsonWebToken = sharedPreferences.getString(getString(R.string.json_web_token), null)
 
-        createASoloStreakCall(jsonWebToken,"5c35116059f7ba19e4e248a9", streakName.text.toString(), streakDescription.text.toString(), this.applicationContext)
+        createASoloStreakCall(jsonWebToken,"5c35116059f7ba19e4e248a9", soloStreakName.text.toString(), soloStreakDescription.text.toString(), this.applicationContext)
     }
 
     private fun createASoloStreakCall(jsonWebToken: String, userId: String, streakName: String, streakDescription: String, context: Context) {

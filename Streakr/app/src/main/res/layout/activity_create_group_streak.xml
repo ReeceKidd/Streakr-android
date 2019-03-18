@@ -2,20 +2,20 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/createSoloStreakConstraintLayout"
+    android:id="@+id/createGroupStreakConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateSoloStreak">
+    tools:context=".CreateGroupStreak">
 
     <TextView
-        android:id="@+id/createASoloStreakTitle"
+        android:id="@+id/createAGroupStreakTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/create_solo_streak"
+        android:text="@string/create_group_streak"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textColor="@color/cardview_dark_background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +26,7 @@
 
 
     <EditText
-        android:id="@+id/soloStreakName"
+        android:id="@+id/groupStreakName"
         android:layout_width="0dp"
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
@@ -48,7 +48,7 @@
         tools:textColor="@color/cardview_light_background" />
 
     <EditText
-        android:id="@+id/soloStreakDescription"
+        android:id="@+id/groupStreakDescription"
         android:layout_width="0dp"
         android:layout_height="130dp"
         android:layout_marginStart="16dp"
@@ -65,12 +65,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/streakName"
+        app:layout_constraintTop_toBottomOf="@+id/groupStreakName"
         app:layout_constraintVertical_bias="0.048"
         tools:textColor="@color/cardview_light_background" />
 
     <Button
-        android:id="@+id/createSoloStreakNextButton"
+        android:id="@+id/createGroupStreakNextButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -85,8 +85,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.963" />
-
-
 
 
 </android.support.constraint.ConstraintLayout>

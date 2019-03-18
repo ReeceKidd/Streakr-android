@@ -13,10 +13,17 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        createASoloStreakButton.setOnClickListener {
+        createSoloStreakButton.setOnClickListener {
             val intent = Intent(this.applicationContext, CreateSoloStreak::class.java)
             this.applicationContext.startActivity(intent)
         }
+
+        createGroupStreakButton.setOnClickListener {
+            val intent = Intent(this.applicationContext, CreateGroupStreak::class.java)
+            this.applicationContext.startActivity(intent)
+        }
+
+
     }
 
 }

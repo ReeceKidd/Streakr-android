@@ -8,7 +8,7 @@
     tools:context=".HomeActivity">
 
     <Button
-        android:id="@+id/createASoloStreakButton"
+        android:id="@+id/createSoloStreakButton"
         style="@android:style/Widget.DeviceDefault.Button.Toggle"
         android:layout_width="0dp"
         android:layout_height="45dp"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/createAGroupStreakButton"
+        android:id="@+id/createGroupStreakButton"
         style="@android:style/Widget.DeviceDefault.Button.Toggle"
         android:layout_width="0dp"
         android:layout_height="45dp"
@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createASoloStreakButton" />
+        app:layout_constraintTop_toBottomOf="@+id/createSoloStreakButton" />
 
     <Button
         android:id="@+id/manageStreaksButton"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createAGroupStreakButton" />
+        app:layout_constraintTop_toBottomOf="@+id/createGroupStreakButton" />
 
 
     <Button
