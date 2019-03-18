@@ -14,7 +14,7 @@ import java.io.IOException
 
 class CreateSoloStreak : AppCompatActivity() {
 
-    val tag = "CreateSoloStreak"
+   val LOG_TAG = CreateSoloStreak::class.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,9 +36,9 @@ class CreateSoloStreak : AppCompatActivity() {
     "streakDescription": "$streakDescription"
             }
         	""".trimIndent()
-        Log.d(tag, "json: $json")
+        Log.d(LOG_TAG, "json: $json")
         val requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)
-        Log.d(tag, requestBody.toString())
+        Log.d(LOG_TAG, requestBody.toString())
 
         val request = Request.Builder()
                 .url(url)
@@ -65,7 +65,7 @@ class CreateSoloStreak : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call, e: IOException) {
-                Log.d(tag, "Failed to execute request ${e.message}")
+                Log.d(LOG_TAG, "Failed to execute request ${e.message}")
             }
         })
     }
