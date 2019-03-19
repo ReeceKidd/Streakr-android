@@ -8,7 +8,7 @@
     tools:context=".SoloStreakCreatedActivity">
 
     <TextView
-        android:id="@+id/soloTreakHeadline"
+        android:id="@+id/soloStreakHeadline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -33,7 +33,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/solo_streak_name"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cardview_dark_background"
@@ -52,7 +51,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/solo_streak_description"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cardview_dark_background"
         app:layout_constraintBottom_toBottomOf="parent"

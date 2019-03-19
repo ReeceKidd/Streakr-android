@@ -14,6 +14,13 @@ import java.io.IOException
 
 class CreateSoloStreak : AppCompatActivity() {
 
+    object SoloStreak {
+        var USER_ID = "userId"
+        var STREAK_NAME = "streakName"
+        var STREAK_DESCRIPTION = "streakDescription"
+
+    }
+
    val LOG_TAG = CreateSoloStreak::class.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,16 +31,22 @@ class CreateSoloStreak : AppCompatActivity() {
                 getString(R.string.shared_preferences_api_key), Context.MODE_PRIVATE)
         val jsonWebToken = sharedPreferences.getString(getString(R.string.json_web_token), null)
 
-        createASoloStreakCall(jsonWebToken,"5c35116059f7ba19e4e248a9", soloStreakName.text.toString(), soloStreakDescription.text.toString(), this.applicationContext)
+        createSoloStreakNextButton.setOnClickListener {
+            val soloStreakNameText = soloStreakName.text.toString()
+            val soloStreakDescriptionText = soloStreakDescription.text.toString()
+
+            createASoloStreakCall(jsonWebToken,"5c35116059f7ba19e4e248a9", soloStreakNameText, soloStreakDescriptionText, this.applicationContext)
+        }
+
     }
 
     private fun createASoloStreakCall(jsonWebToken: String, userId: String, streakName: String, streakDescription: String, context: Context) {
         val url = "http://10.0.2.2:4040/solo-streak/create"
 
         val json = """ {
-    "userId": "$userId",
-    "streakName": "$streakName",
-    "streakDescription": "$streakDescription"
+    "${SoloStreak.USER_ID}": "$userId",
+    "${SoloStreak.STREAK_NAME}": "$streakName",
+    "${SoloStreak.STREAK_DESCRIPTION}": "$streakDescription"
             }
         	""".trimIndent()
         Log.d(LOG_TAG, "json: $json")
@@ -52,6 +65,8 @@ class CreateSoloStreak : AppCompatActivity() {
                 if (response.isSuccessful) {
                     runOnUiThread {
                         val intent = Intent(context, SoloStreakCreatedActivity::class.java)
+                        intent.putExtra(SoloStreak.STREAK_NAME, streakName)
+                        intent.putExtra(SoloStreak.STREAK_DESCRIPTION, streakDescription)
                         context.startActivity(intent)
                     }
                     return

@@ -20,10 +20,6 @@
             android:label="@string/title_activity_create_group_streak"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".SoloStreakCreatedActivity"
-            android:label="@string/title_activity_solo_streak_created"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".FriendStreakForfeitActivity"
             android:label="@string/title_activity_friend_streak_forfeit"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -62,6 +58,10 @@
             android:name=".CreateSoloStreak"
             android:label="@string/title_activity_create_streak"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SoloStreakCreatedActivity"
+            android:label="@string/title_activity_solo_streak_created"
+            android:parentActivityName=".CreateSoloStreak"/>
     </application>
 
 </manifest>
