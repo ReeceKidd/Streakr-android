@@ -56,12 +56,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CreateSoloStreak"
-            android:label="@string/title_activity_create_streak"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_create__solo_streak"/>
         <activity
             android:name=".SoloStreakCreatedActivity"
-            android:label="@string/title_activity_solo_streak_created"
-            android:parentActivityName=".CreateSoloStreak"/>
+            android:label="@string/title_activity_solo_streak_created"/>
     </application>
 
 </manifest>

@@ -50,7 +50,7 @@
     <string name="json_web_token">Json Web Token</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_home">HomeActivity</string>
-    <string name="title_activity_create_streak">CreateStreak</string>
+    <string name="title_activity_create__solo_streak">Create Solo Streak</string>
     <!-- Create a streak -->
     <string name="streak_name">Streak name</string>
     <string name="streak_description">Streak description</string>
@@ -73,6 +73,7 @@
     <string name="submit">Submit</string>
     <string name="skip">Skip</string>
     <string name="next">Next</string>
+    <string name="home">Home</string>
     <string name="title_activity_streak_reward">StreakRewardActivity</string>
     <string name="title_activity_solo_streak_reward">SoloStreakRewardActivity</string>
     <string name="title_activity_streak_end_date">StreakEndDateActivity</string>
@@ -86,7 +87,7 @@
     <string name="solo_forfeit_description">Solo forfeit description</string>
     <string name="solo_reward_description">Solo reward description</string>
     <string name="title_activity_streak_created">StreakCreatedActivity</string>
-    <string name="title_activity_solo_streak_created">SoloStreakCreatedActivity</string>
+    <string name="title_activity_solo_streak_created">Solo Streak Created</string>
     <string name="title_activity_create_group_streak">CreateGroupStreak</string>
 
 
