@@ -50,4 +50,34 @@ Ui, Api, APackage name ui.home
 
 Repository pattern, screens don't give a shit so you have a repository that decides. It.
 
+10)
+
+Is this the correct way to do the savedInstanceState?
+
+       createSoloStreakNextButton.setOnClickListener {
+            val soloStreakNameText: String
+            val soloStreakDescriptionText: String
+            val streakNameSavedInstance = savedInstanceState?.getString(SOLO_STREAK_NAME_KEY)
+            val streakDescriptionSavedInstance = savedInstanceState?.getString(SOLO_STREAK_DESCRIPTION_KEY)
+            if(streakNameSavedInstance !== null && streakDescriptionSavedInstance !== null){
+                soloStreakNameText = streakNameSavedInstance
+                soloStreakDescriptionText = streakDescriptionSavedInstance
+            } else {
+                soloStreakNameText = soloStreakName.text.toString()
+                soloStreakDescriptionText = soloStreakDescription.text.toString()
+            }
+
+            createASoloStreakCall(jsonWebToken,"5c35116059f7ba19e4e248a9", soloStreakNameText, soloStreakDescriptionText, this.applicationContext)
+        }
+
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
+        super.onSaveInstanceState(outState, outPersistentState)
+        if(soloStreakName.text.toString().isNotEmpty()) outState?.putString(SOLO_STREAK_NAME_KEY, soloStreakName.text.toString())
+        if(soloStreakDescription.text.toString().isNotEmpty()) outState?.putString(SOLO_STREAK_DESCRIPTION_KEY, soloStreakDescription.text.toString())
+    }
+
+    11)
+
 
