@@ -3,6 +3,7 @@ package com.reecekidd.streakr
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
@@ -22,6 +23,8 @@ class CreateSoloStreak : AppCompatActivity() {
     }
 
    val LOG_TAG = CreateSoloStreak::class.simpleName
+    val SOLO_STREAK_NAME_KEY = "soloSteakName"
+    val SOLO_STREAK_DESCRIPTION_KEY = "soloStreakDescription"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,12 +35,27 @@ class CreateSoloStreak : AppCompatActivity() {
         val jsonWebToken = sharedPreferences.getString(getString(R.string.json_web_token), null)
 
         createSoloStreakNextButton.setOnClickListener {
-            val soloStreakNameText = soloStreakName.text.toString()
-            val soloStreakDescriptionText = soloStreakDescription.text.toString()
+            val soloStreakNameText: String
+            val soloStreakDescriptionText: String
+            val streakNameSavedInstance = savedInstanceState?.getString(SOLO_STREAK_NAME_KEY)
+            val streakDescriptionSavedInstance = savedInstanceState?.getString(SOLO_STREAK_DESCRIPTION_KEY)
+            if(streakNameSavedInstance !== null && streakDescriptionSavedInstance !== null){
+                soloStreakNameText = streakNameSavedInstance
+                soloStreakDescriptionText = streakDescriptionSavedInstance
+            } else {
+                soloStreakNameText = soloStreakName.text.toString()
+                soloStreakDescriptionText = soloStreakDescription.text.toString()
+            }
 
             createASoloStreakCall(jsonWebToken,"5c35116059f7ba19e4e248a9", soloStreakNameText, soloStreakDescriptionText, this.applicationContext)
         }
 
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
+        super.onSaveInstanceState(outState, outPersistentState)
+        if(soloStreakName.text.toString().isNotEmpty()) outState?.putString(SOLO_STREAK_NAME_KEY, soloStreakName.text.toString())
+        if(soloStreakDescription.text.toString().isNotEmpty()) outState?.putString(SOLO_STREAK_DESCRIPTION_KEY, soloStreakDescription.text.toString())
     }
 
     private fun createASoloStreakCall(jsonWebToken: String, userId: String, streakName: String, streakDescription: String, context: Context) {
