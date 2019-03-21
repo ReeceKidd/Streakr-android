@@ -23,6 +23,11 @@ class HomeActivity : AppCompatActivity() {
             this.applicationContext.startActivity(intent)
         }
 
+        manageStreaksButton.setOnClickListener {
+            val intent = Intent(this.applicationContext, ManageStreaks::class.java)
+            this.applicationContext.startActivity(intent)
+        }
+
 
     }
 

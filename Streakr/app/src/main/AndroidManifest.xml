@@ -16,9 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ManageStreaks"
+            android:label="@string/title_activity_manage_streaks"/>
+        <activity
             android:name=".CreateGroupStreak"
             android:label="@string/title_activity_create_group_streak"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".FriendStreakForfeitActivity"
             android:label="@string/title_activity_friend_streak_forfeit"
@@ -56,10 +59,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CreateSoloStreak"
-            android:label="@string/title_activity_create__solo_streak"/>
+            android:label="@string/title_activity_create__solo_streak" />
         <activity
             android:name=".SoloStreakCreatedActivity"
-            android:label="@string/title_activity_solo_streak_created"/>
+            android:label="@string/title_activity_solo_streak_created" />
     </application>
 
 </manifest>
