@@ -90,6 +90,7 @@
     <string name="title_activity_solo_streak_created">Solo Streak Created</string>
     <string name="title_activity_create_group_streak">CreateGroupStreak</string>
     <string name="title_activity_manage_streaks">Manage Streaks</string>
+    <string name="title_activity_add_friend">Add Friend</string>
 
 
 </resources>

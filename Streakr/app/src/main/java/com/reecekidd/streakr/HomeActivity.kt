@@ -28,6 +28,11 @@ class HomeActivity : AppCompatActivity() {
             this.applicationContext.startActivity(intent)
         }
 
+        addAFriendButton.setOnClickListener {
+            val intent = Intent(this.applicationContext, AddFriendActivity::class.java)
+            this.applicationContext.startActivity(intent)
+        }
+
 
     }
 
