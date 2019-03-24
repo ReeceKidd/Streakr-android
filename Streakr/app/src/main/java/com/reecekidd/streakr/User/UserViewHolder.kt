@@ -8,8 +8,6 @@ class UserViewHolder(view: View): RecyclerView.ViewHolder(view) {
     init {
         view.setOnClickListener {
             println("TEST")
-            val intent = Intent(view.context, UserProfileActivity::class.java)
-            view.context.startActivity(intent)
         }
     }
 }

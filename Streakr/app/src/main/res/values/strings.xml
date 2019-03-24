@@ -88,9 +88,10 @@
     <string name="solo_reward_description">Solo reward description</string>
     <string name="title_activity_streak_created">StreakCreatedActivity</string>
     <string name="title_activity_solo_streak_created">Solo Streak Created</string>
-    <string name="title_activity_create_group_streak">CreateGroupStreak</string>
+    <string name="title_activity_create_group_streak">Create Group Streak</string>
     <string name="title_activity_manage_streaks">Manage Streaks</string>
     <string name="title_activity_add_friend">Add Friend</string>
+    <string name="title_activity_view_profile">View Profile</string>
 
 
 </resources>

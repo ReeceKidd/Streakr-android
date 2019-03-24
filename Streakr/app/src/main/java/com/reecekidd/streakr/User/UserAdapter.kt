@@ -45,7 +45,6 @@ class UserAdapter(val userFeed: UserFeed) : RecyclerView.Adapter<UserViewHolder>
     private fun setOnClickListenerForViewProfileButton(viewProfileButton: Button, context: Context){
         viewProfileButton.setOnClickListener {
 
-            startUserProfileActivity(context)
             // NEED TO CAPTURE EITHER THE USER DATA OR THE ID HERE TO PASS IT TO THE USER PROFILE
             // ACTVITY
         }
@@ -55,11 +54,6 @@ class UserAdapter(val userFeed: UserFeed) : RecyclerView.Adapter<UserViewHolder>
         addUserButton.setOnClickListener {
             // NEED TO MAKE THE REST API CALL HERE.
         }
-    }
-
-    private fun startUserProfileActivity(context: Context){
-        val intent = Intent(context, UserProfileActivity::class.java)
-        context.startActivity(intent)
     }
 
     private fun getContextOfHolder(holder: UserViewHolder): Context {

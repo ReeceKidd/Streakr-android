@@ -16,15 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ViewProfileActivity"
+            android:label="@string/title_activity_view_profile"/>
+        <activity
             android:name=".AddFriendActivity"
-            android:label="@string/title_activity_add_friend"/>
+            android:label="@string/title_activity_add_friend" />
         <activity
             android:name=".ManageStreaks"
             android:label="@string/title_activity_manage_streaks" />
         <activity
             android:name=".CreateGroupStreak"
-            android:label="@string/title_activity_create_group_streak"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_create_group_streak"/>
         <activity
             android:name=".FriendStreakForfeitActivity"
             android:label="@string/title_activity_friend_streak_forfeit"
@@ -40,10 +42,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".User.UserProfileActivity"
-            android:label="@string/title_activity_user_profile"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register"

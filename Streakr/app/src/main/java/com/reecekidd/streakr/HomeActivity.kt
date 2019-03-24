@@ -33,6 +33,11 @@ class HomeActivity : AppCompatActivity() {
             this.applicationContext.startActivity(intent)
         }
 
+        viewProfileButton.setOnClickListener {
+            val intent = Intent(this.applicationContext, ViewProfileActivity::class.java)
+            this.applicationContext.startActivity(intent)
+        }
+
 
     }
 
