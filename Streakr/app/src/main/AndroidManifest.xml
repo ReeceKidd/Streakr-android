@@ -17,7 +17,9 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".FriendsActivity"
-            android:label="@string/title_activity_friends"/>
+            android:label="@string/title_activity_friends"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity
             android:name=".GroupStreakCreatedActivity"
             android:label="@string/title_activity_group_streak_created"

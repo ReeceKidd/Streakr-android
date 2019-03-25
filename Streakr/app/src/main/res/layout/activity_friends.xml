@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".FriendsActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/friendsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ToolBarStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <Button
         android:id="@+id/findFriendsButton"
         android:layout_width="wrap_content"
