@@ -16,8 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".FriendsActivity"
+            android:label="@string/title_activity_friends"/>
+        <activity
+            android:name=".GroupStreakCreatedActivity"
+            android:label="@string/title_activity_group_streak_created"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SelectFriendsForGroupStreakActivity"
+            android:label="@string/title_activity_select_friends_for_group_streak"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".ViewProfileActivity"
-            android:label="@string/title_activity_view_profile"/>
+            android:label="@string/title_activity_view_profile" />
         <activity
             android:name=".AddFriendActivity"
             android:label="@string/title_activity_add_friend" />
@@ -26,7 +37,7 @@
             android:label="@string/title_activity_manage_streaks" />
         <activity
             android:name=".CreateGroupStreak"
-            android:label="@string/title_activity_create_group_streak"/>
+            android:label="@string/title_activity_create_group_streak" />
         <activity
             android:name=".FriendStreakForfeitActivity"
             android:label="@string/title_activity_friend_streak_forfeit"

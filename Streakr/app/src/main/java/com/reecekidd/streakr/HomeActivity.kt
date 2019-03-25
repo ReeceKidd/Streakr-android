@@ -2,7 +2,6 @@ package com.reecekidd.streakr
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
 
 import kotlinx.android.synthetic.main.activity_home.*
@@ -28,8 +27,8 @@ class HomeActivity : AppCompatActivity() {
             this.applicationContext.startActivity(intent)
         }
 
-        addAFriendButton.setOnClickListener {
-            val intent = Intent(this.applicationContext, AddFriendActivity::class.java)
+        friendsButton.setOnClickListener {
+            val intent = Intent(this.applicationContext, FriendsActivity::class.java)
             this.applicationContext.startActivity(intent)
         }
 

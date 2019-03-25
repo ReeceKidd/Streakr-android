@@ -16,7 +16,7 @@
         android:background="@color/cardview_dark_background"
         android:ems="10"
         android:hint="@string/hint_email"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textAlignment="center"
         android:textColor="@color/cardview_light_background"

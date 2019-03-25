@@ -15,16 +15,13 @@ import java.io.IOException
 
 class CreateSoloStreak : AppCompatActivity() {
 
-    object SoloStreak {
-        var USER_ID = "userId"
-        var STREAK_NAME = "streakName"
-        var STREAK_DESCRIPTION = "streakDescription"
-
+    companion object {
+        const val USER_ID_KEY = "userId"
+        const val SOLO_STREAK_NAME_KEY = "soloStreakName"
+        const val SOLO_STREAK_DESCRIPTION_KEY = "soloStreakDescription"
     }
 
    val LOG_TAG = CreateSoloStreak::class.simpleName
-    val SOLO_STREAK_NAME_KEY = "soloSteakName"
-    val SOLO_STREAK_DESCRIPTION_KEY = "soloStreakDescription"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,9 +59,9 @@ class CreateSoloStreak : AppCompatActivity() {
         val url = "http://10.0.2.2:4040/solo-streak/create"
 
         val json = """ {
-    "${SoloStreak.USER_ID}": "$userId",
-    "${SoloStreak.STREAK_NAME}": "$streakName",
-    "${SoloStreak.STREAK_DESCRIPTION}": "$streakDescription"
+    "userId": "$userId",
+    "streakName": "$streakName",
+    "streakDescription": "$streakDescription"
             }
         	""".trimIndent()
         Log.d(LOG_TAG, "json: $json")
@@ -83,8 +80,8 @@ class CreateSoloStreak : AppCompatActivity() {
                 if (response.isSuccessful) {
                     runOnUiThread {
                         val intent = Intent(context, SoloStreakCreatedActivity::class.java)
-                        intent.putExtra(SoloStreak.STREAK_NAME, streakName)
-                        intent.putExtra(SoloStreak.STREAK_DESCRIPTION, streakDescription)
+                        intent.putExtra(SOLO_STREAK_NAME_KEY, streakName)
+                        intent.putExtra(SOLO_STREAK_DESCRIPTION_KEY, streakDescription)
                         context.startActivity(intent)
                     }
                     return

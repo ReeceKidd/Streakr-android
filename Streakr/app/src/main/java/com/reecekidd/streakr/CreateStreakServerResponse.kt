@@ -5,7 +5,7 @@ import java.util.*
 
 class CreateStreakServerResponse(
         var startDate: Date,
-        var calendar: Array<Object>,
+        var calendar: Array<kotlin.Any>,
         var _id: String,
         var streakName: String,
         var streakDescription: String,

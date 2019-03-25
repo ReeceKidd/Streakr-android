@@ -34,7 +34,7 @@ class UserFeedActivity : AppCompatActivity() {
         val client = OkHttpClient()
         client.newCall(request).enqueue(object: Callback {
             override fun onResponse(call: Call, response: Response) {
-              val body = response?.body()?.string()
+              val body = response.body()?.string()
                 val gson = GsonBuilder().create()
                 val userFeed = gson.fromJson(body, UserFeed::class.java)
                 Log.v("helicopter", body)

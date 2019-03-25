@@ -56,8 +56,8 @@
     <string name="streak_description">Streak description</string>
     <string name="success_criteria"> Success criteria</string>
     <string name="who_is_involved">Who is involved?</string>
-    <string name="friends">Friends</string>
     <string name="just_me">Just Me</string>
+    <string name="friends"> Friends </string>
     <string name="create_streak">Create Streak</string>
     <!-- Solo Streak Created -->
     <string name="solo_streak_created_headline"> You created a solo streak! </string>
@@ -92,6 +92,11 @@
     <string name="title_activity_manage_streaks">Manage Streaks</string>
     <string name="title_activity_add_friend">Add Friend</string>
     <string name="title_activity_view_profile">View Profile</string>
+    <string name="title_activity_select_friends_for_group_streak">
+        SelectFriendsForGroupStreakActivity
+    </string>
+    <string name="title_activity_group_streak_created">GroupStreakCreatedActivity</string>
+    <string name="title_activity_friends">Friends </string>
 
 
 </resources>

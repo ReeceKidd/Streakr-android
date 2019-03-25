@@ -16,10 +16,10 @@ class SoloStreakCreatedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solo_streak_created)
-        val streakName:String = intent.getStringExtra(CreateSoloStreak.SoloStreak.STREAK_NAME)
-        val streakDescription: String = intent.getStringExtra(CreateSoloStreak.SoloStreak.STREAK_DESCRIPTION)
-        createdSoloStreakName.setText(streakName)
-        createdSoloStreakDescription.setText(streakDescription)
+        val streakName:String = intent.getStringExtra(CreateSoloStreak.SOLO_STREAK_NAME_KEY)
+        val streakDescription: String = intent.getStringExtra(CreateSoloStreak.SOLO_STREAK_DESCRIPTION_KEY)
+        createdSoloStreakName.text = streakName
+        createdSoloStreakDescription.text = streakDescription
 
         soloStreakCreatedHomeButton.setOnClickListener {
             val intent = Intent(this.applicationContext, HomeActivity::class.java)
