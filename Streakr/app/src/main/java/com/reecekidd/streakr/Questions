@@ -123,5 +123,5 @@ Is this the correct way to do the savedInstanceState?
             }
         })
 
-        12) How should you handle failure of requests in the doInBackground call? 
+        12) How should you handle failure of requests in the doInBackground call?
 

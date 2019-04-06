@@ -2,6 +2,7 @@ package com.reecekidd.streakr
 
 import android.content.Context
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log
@@ -15,26 +16,40 @@ import java.io.IOException
 
 class LoginActivity : AppCompatActivity() {
 
+    lateinit var context: Context
+    lateinit var emailText: String
+    lateinit var passwordText: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         val tag = "LoginActivity"
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        context = this.applicationContext
+
         registerTextView.setOnClickListener {
-            val intent = Intent(this.applicationContext, RegisterActivity::class.java)
+            val intent = Intent(context, RegisterActivity::class.java)
             this.applicationContext.startActivity(intent)
         }
 
         loginButton.setOnClickListener {
             Log.d(tag, "Login button clicked")
-            val emailText = emailTextFieldLogin.text.toString()
-            val passwordText = passwordTextFieldLogin.text.toString()
+            emailText = emailTextFieldLogin.text.toString()
+            passwordText = passwordTextFieldLogin.text.toString()
             Log.d(tag, "Email $emailText")
             Log.d(tag, "Password $passwordText")
-            makeLoginCall(emailText, passwordText, this.applicationContext)
+            loginTask().execute()
         }
 
     }
+
+    internal inner class loginTask: AsyncTask<Void, Void, String>() {
+        override fun doInBackground(vararg params: Void?): String? {
+            makeLoginCall(emailText, passwordText, context)
+            return "Success"
+        }
+    }
+
 
     private fun makeLoginCall(emailText: String, passwordText: String, context: Context) {
         val tag = "LoginAPICall"
