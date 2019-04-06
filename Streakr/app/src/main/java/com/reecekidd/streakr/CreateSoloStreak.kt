@@ -110,6 +110,9 @@ class CreateSoloStreak : AppCompatActivity() {
 
             override fun onFailure(call: Call, e: IOException) {
                 Log.d(LOG_TAG, "Failed to execute request ${e.message}")
+                runOnUiThread {
+                    Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
+                }
             }
         })
     }
