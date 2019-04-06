@@ -92,6 +92,9 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call, e: IOException) {
                 Log.d(tag, "Failed to execute request ${e.message}")
+                runOnUiThread {
+                    Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
+                }
             }
         })
     }
