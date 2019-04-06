@@ -67,6 +67,7 @@ class CreateSoloStreak : AppCompatActivity() {
             createASoloStreakCall(jsonWebToken, userId, soloStreakNameText, soloStreakDescriptionText, context)
             return "Success"
         }
+
     }
 
     private fun createASoloStreakCall(jsonWebToken: String, userId: String, streakName: String, streakDescription: String, context: Context) {

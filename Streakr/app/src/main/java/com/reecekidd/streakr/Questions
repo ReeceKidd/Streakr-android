@@ -78,6 +78,50 @@ Is this the correct way to do the savedInstanceState?
         if(soloStreakDescription.text.toString().isNotEmpty()) outState?.putString(SOLO_STREAK_DESCRIPTION_KEY, soloStreakDescription.text.toString())
     }
 
-    11)
+    11) The following is done inside of an AsyncTask, my question is is it ok to start an activity in the doInBackground call?
 
+  private fun createASoloStreakCall(jsonWebToken: String, userId: String, streakName: String, streakDescription: String, context: Context) {
+        val url = "http://10.0.2.2:4040/solo-streak/create"
+
+        val json = """ {
+    "userId": "$userId",
+    "streakName": "$streakName",
+    "streakDescription": "$streakDescription"
+            }
+        	""".trimIndent()
+        Log.d(LOG_TAG, "json: $json")
+        val requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)
+        Log.d(LOG_TAG, requestBody.toString())
+
+        val request = Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .addHeader("x-access-token", jsonWebToken)
+                .build()
+        val client = OkHttpClient()
+        client.newCall(request).enqueue(object : Callback {
+            override fun onResponse(call: Call, response: Response) {
+                if (response.isSuccessful) {
+                    runOnUiThread {
+                        val intent = Intent(context, SoloStreakCreatedActivity::class.java)
+                        intent.putExtra(SOLO_STREAK_NAME_KEY, streakName)
+                        intent.putExtra(SOLO_STREAK_DESCRIPTION_KEY, streakDescription)
+                        context.startActivity(intent)
+                    }
+                    return
+                }
+                val body = response.body()?.string()
+                val parsedResponse = Klaxon().parse<ErrorServerResponse>("""$body""")
+                val message = parsedResponse?.message
+                runOnUiThread {
+                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call, e: IOException) {
+                Log.d(LOG_TAG, "Failed to execute request ${e.message}")
+            }
+        })
+
+        12) How should you handle failure of requests in the doInBackground call? 
 
