@@ -2,6 +2,7 @@ package com.reecekidd.streakr
 
 import android.content.Context
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
@@ -23,17 +24,24 @@ class CreateSoloStreak : AppCompatActivity() {
 
    val LOG_TAG = CreateSoloStreak::class.simpleName
 
+    lateinit var jsonWebToken: String
+    lateinit var userId: String
+    lateinit var soloStreakNameText: String
+    lateinit var soloStreakDescriptionText: String
+    lateinit var context: Context
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_solo_streak)
         // Need to get the user ID from the json web token in shared preferences
+        context = this.applicationContext
         val sharedPreferences = getSharedPreferences(
                 getString(R.string.shared_preferences_api_key), Context.MODE_PRIVATE)
-        val jsonWebToken = sharedPreferences.getString(getString(R.string.json_web_token), null)
+
+        jsonWebToken = sharedPreferences.getString(getString(R.string.json_web_token), null)
+        userId = "5c35116059f7ba19e4e248a9"
 
         createSoloStreakNextButton.setOnClickListener {
-            val soloStreakNameText: String
-            val soloStreakDescriptionText: String
             val streakNameSavedInstance = savedInstanceState?.getString(SOLO_STREAK_NAME_KEY)
             val streakDescriptionSavedInstance = savedInstanceState?.getString(SOLO_STREAK_DESCRIPTION_KEY)
             if(streakNameSavedInstance !== null && streakDescriptionSavedInstance !== null){
@@ -43,8 +51,7 @@ class CreateSoloStreak : AppCompatActivity() {
                 soloStreakNameText = soloStreakName.text.toString()
                 soloStreakDescriptionText = soloStreakDescription.text.toString()
             }
-
-            createASoloStreakCall(jsonWebToken,"5c35116059f7ba19e4e248a9", soloStreakNameText, soloStreakDescriptionText, this.applicationContext)
+            createSoloStreakTask().execute()
         }
 
     }
@@ -53,6 +60,13 @@ class CreateSoloStreak : AppCompatActivity() {
         super.onSaveInstanceState(outState, outPersistentState)
         if(soloStreakName.text.toString().isNotEmpty()) outState?.putString(SOLO_STREAK_NAME_KEY, soloStreakName.text.toString())
         if(soloStreakDescription.text.toString().isNotEmpty()) outState?.putString(SOLO_STREAK_DESCRIPTION_KEY, soloStreakDescription.text.toString())
+    }
+
+    internal inner class createSoloStreakTask: AsyncTask<Void, Void, String>() {
+        override fun doInBackground(vararg params: Void?): String? {
+            createASoloStreakCall(jsonWebToken, userId, soloStreakNameText, soloStreakDescriptionText, context)
+            return "Success"
+        }
     }
 
     private fun createASoloStreakCall(jsonWebToken: String, userId: String, streakName: String, streakDescription: String, context: Context) {
@@ -76,7 +90,6 @@ class CreateSoloStreak : AppCompatActivity() {
         val client = OkHttpClient()
         client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {
-                val body = response.body()?.string()
                 if (response.isSuccessful) {
                     runOnUiThread {
                         val intent = Intent(context, SoloStreakCreatedActivity::class.java)
@@ -86,12 +99,12 @@ class CreateSoloStreak : AppCompatActivity() {
                     }
                     return
                 }
+                val body = response.body()?.string()
                 val parsedResponse = Klaxon().parse<ErrorServerResponse>("""$body""")
                 val message = parsedResponse?.message
                 runOnUiThread {
                     Toast.makeText(context, message, Toast.LENGTH_LONG).show()
                 }
-
             }
 
             override fun onFailure(call: Call, e: IOException) {
