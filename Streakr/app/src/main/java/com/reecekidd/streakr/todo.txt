@@ -1,0 +1,6 @@
+- Convert everything to Async task
+- Get user flow
+- Add friends flow
+- Get friends flow
+- Log out flow
+- 24 hour streak setup with agenda
