@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.friend_row.view.*
 
 class AddFriendFeed(val users: List<AddFriendFeedUser>)
 
@@ -22,10 +23,11 @@ class  AddFriendRecyclerViewAdapter(val addFriendFeed: AddFriendFeed): RecyclerV
     }
 
     override fun onBindViewHolder(holder: FriendViewHolder, position: Int) {
-
+    val user = addFriendFeed.users.get(position)
+        holder?.view.userNameTextView.text = user.userName
     }
 }
 
-class FriendViewHolder(v: View): RecyclerView.ViewHolder(v) {
+class FriendViewHolder(val view: View): RecyclerView.ViewHolder(view) {
 
 }
