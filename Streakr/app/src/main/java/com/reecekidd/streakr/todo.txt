@@ -1,4 +1,4 @@
-- Convert everything to Async task
+- Convert everything to Async task (Done)
 - Get user flow
 - Add friends flow
 - Get friends flow

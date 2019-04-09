@@ -97,6 +97,7 @@
     </string>
     <string name="title_activity_group_streak_created">GroupStreakCreatedActivity</string>
     <string name="title_activity_friends">Friends </string>
+    <string name="title_activity_get_users">GetUsersActivity</string>
 
 
 </resources>
