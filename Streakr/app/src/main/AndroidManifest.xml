@@ -16,9 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".GroupStreaks.GroupStreaks"
+            android:label="@string/title_activity_group_streaks"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".SoloStreaks.SoloStreaksActivity"
+            android:label="@string/title_activity_solo_streaks"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".AddFriend.Test"
             android:label="@string/title_activity_test"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ManageFriends.FriendsActivity"
             android:label="@string/title_activity_friends"
@@ -75,7 +83,7 @@
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CreateSoloStreak.CreateSoloStreak"
+            android:name=".CreateSoloStreak.CreateSoloStreakActivity"
             android:label="@string/title_activity_create__solo_streak" />
         <activity
             android:name=".SoloStreakCreated.SoloStreakCreatedActivity"

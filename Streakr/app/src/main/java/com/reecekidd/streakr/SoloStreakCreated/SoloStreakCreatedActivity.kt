@@ -3,7 +3,7 @@ package com.reecekidd.streakr.SoloStreakCreated
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
-import com.reecekidd.streakr.CreateSoloStreak.CreateSoloStreak
+import com.reecekidd.streakr.CreateSoloStreak.CreateSoloStreakActivity
 import com.reecekidd.streakr.HomeActivity.HomeActivity
 import com.reecekidd.streakr.R
 
@@ -16,8 +16,8 @@ class SoloStreakCreatedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solo_streak_created)
-        val streakName:String = intent.getStringExtra(CreateSoloStreak.SOLO_STREAK_NAME_KEY)
-        val streakDescription: String = intent.getStringExtra(CreateSoloStreak.SOLO_STREAK_DESCRIPTION_KEY)
+        val streakName:String = intent.getStringExtra(CreateSoloStreakActivity.SOLO_STREAK_NAME_KEY)
+        val streakDescription: String = intent.getStringExtra(CreateSoloStreakActivity.SOLO_STREAK_DESCRIPTION_KEY)
         createdSoloStreakName.text = streakName
         createdSoloStreakDescription.text = streakDescription
 

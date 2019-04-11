@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_create_solo_streak.*
 import okhttp3.*
 import java.io.IOException
 
-class CreateSoloStreak : AppCompatActivity() {
+class CreateSoloStreakActivity : AppCompatActivity() {
 
     companion object {
         const val USER_ID_KEY = "userId"
@@ -25,12 +25,14 @@ class CreateSoloStreak : AppCompatActivity() {
         const val SOLO_STREAK_DESCRIPTION_KEY = "soloStreakDescription"
     }
 
-   val LOG_TAG = CreateSoloStreak::class.simpleName
+   val LOG_TAG = CreateSoloStreakActivity::class.simpleName
 
     lateinit var jsonWebToken: String
     lateinit var userId: String
+
     lateinit var soloStreakNameText: String
     lateinit var soloStreakDescriptionText: String
+
     lateinit var context: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {

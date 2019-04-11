@@ -8,7 +8,7 @@
     tools:context=".HomeActivity.HomeActivity">
 
     <Button
-        android:id="@+id/createSoloStreakButton"
+        android:id="@+id/soloStreaksButton"
         style="@android:style/Widget.DeviceDefault.Button.Toggle"
         android:layout_width="0dp"
         android:layout_height="45dp"
@@ -16,14 +16,14 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:background="#035f1f"
-        android:text="@string/create_solo_streak"
+        android:text="@string/solo_streaks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/createGroupStreakButton"
+        android:id="@+id/groupStreaksButton"
         style="@android:style/Widget.DeviceDefault.Button.Toggle"
         android:layout_width="0dp"
         android:layout_height="45dp"
@@ -31,11 +31,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="#035f1f"
-        android:text="@string/create_group_streak"
+        android:text="@string/group_streaks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createSoloStreakButton" />
+        app:layout_constraintTop_toBottomOf="@+id/soloStreaksButton" />
 
 
     <Button
@@ -53,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createGroupStreakButton"
+        app:layout_constraintTop_toBottomOf="@+id/groupStreaksButton"
         app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
