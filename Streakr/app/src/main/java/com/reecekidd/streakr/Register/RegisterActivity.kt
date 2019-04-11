@@ -1,4 +1,4 @@
-package com.reecekidd.streakr
+package com.reecekidd.streakr.Register
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log
 import android.widget.Toast
+import com.reecekidd.streakr.Login.LoginActivity
+import com.reecekidd.streakr.R
 
 import kotlinx.android.synthetic.main.activity_register.*
 import okhttp3.*

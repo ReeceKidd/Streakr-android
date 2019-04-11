@@ -1,4 +1,4 @@
-package com.reecekidd.streakr
+package com.reecekidd.streakr.Login
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log
 import android.widget.Toast
 import com.beust.klaxon.Klaxon
+import com.reecekidd.streakr.*
+import com.reecekidd.streakr.HomeActivity.HomeActivity
+import com.reecekidd.streakr.Register.RegisterActivity
 
 
 import kotlinx.android.synthetic.main.activity_login.*

@@ -5,37 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/userNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimary"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115" />
-
-    <ImageButton
-        android:id="@+id/addFriendButton"
-        android:layout_width="wrap_content"
+    <TableRow
+        android:layout_width="304dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/ic_launcher_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.689"
-        app:layout_constraintStart_toEndOf="@+id/userNameTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.101"
-        app:srcCompat="@drawable/add_friend_menu_icon" />
+        app:layout_constraintVertical_bias="0.091">
+
+        <TextView
+            android:id="@+id/userNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="116dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colorPrimary"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.115" />
+
+        <ImageButton
+            android:id="@+id/addFriendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.689"
+            app:layout_constraintStart_toEndOf="@+id/userNameTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.101"
+            app:srcCompat="@drawable/add_friend_menu_icon" />
+    </TableRow>
 
 </android.support.constraint.ConstraintLayout>

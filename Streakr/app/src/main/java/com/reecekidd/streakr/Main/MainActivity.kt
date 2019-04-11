@@ -1,4 +1,4 @@
-package com.reecekidd.streakr
+package com.reecekidd.streakr.Main
 
 import android.content.Context
 import android.content.Intent
@@ -6,11 +6,9 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.widget.Toast
-import com.beust.klaxon.Klaxon
-
-import okhttp3.*
-import java.io.IOException
+import com.reecekidd.streakr.HomeActivity.HomeActivity
+import com.reecekidd.streakr.R
+import com.reecekidd.streakr.Register.RegisterActivity
 
 class MainActivity : AppCompatActivity() {
 

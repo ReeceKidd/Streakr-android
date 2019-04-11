@@ -5,7 +5,7 @@
     android:id="@+id/createSoloStreakConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddFriendActivity">
+    tools:context=".AddFriend.AddFriendActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/addFriendRecyclerView"
@@ -21,4 +21,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2" />
+
 </android.support.constraint.ConstraintLayout>

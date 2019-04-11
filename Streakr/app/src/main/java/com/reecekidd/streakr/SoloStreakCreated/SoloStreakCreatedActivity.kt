@@ -1,11 +1,11 @@
-package com.reecekidd.streakr
+package com.reecekidd.streakr.SoloStreakCreated
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log
-import kotlinx.android.synthetic.main.activity_create_solo_streak.*
+import com.reecekidd.streakr.CreateSoloStreak.CreateSoloStreak
+import com.reecekidd.streakr.HomeActivity.HomeActivity
+import com.reecekidd.streakr.R
 
 import kotlinx.android.synthetic.main.activity_solo_streak_created.*
 

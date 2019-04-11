@@ -4,3 +4,14 @@
 - Get friends flow
 - Log out flow
 - 24 hour streak setup with agenda
+
+09/04/2019 - Need to fix unit tests and intergration now that {users: } is being used to return users.
+
+                Finish the addFriend call. - Continue work on passng context, userId down to the recycler view rows so they can
+                make the network call correctly. Need to figure out how to make a class to handle the network calls. And a class
+                to get the operating userId from the JSON web token to do this correctly.
+
+                then change the appearance of the text and that friend logo.
+                Implement get friends route
+                Create streak logic on the servern
+                Create logout option.

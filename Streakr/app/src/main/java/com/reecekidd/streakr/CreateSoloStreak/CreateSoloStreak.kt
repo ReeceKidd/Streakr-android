@@ -1,4 +1,4 @@
-package com.reecekidd.streakr
+package com.reecekidd.streakr.CreateSoloStreak
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,9 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
 import com.beust.klaxon.Klaxon
+import com.reecekidd.streakr.ErrorServerResponse
+import com.reecekidd.streakr.R
+import com.reecekidd.streakr.SoloStreakCreated.SoloStreakCreatedActivity
 
 import kotlinx.android.synthetic.main.activity_create_solo_streak.*
 import okhttp3.*

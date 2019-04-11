@@ -16,7 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FriendsActivity"
+            android:name=".AddFriend.Test"
+            android:label="@string/title_activity_test"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ManageFriends.FriendsActivity"
             android:label="@string/title_activity_friends"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -31,13 +35,13 @@
             android:name=".ViewProfileActivity"
             android:label="@string/title_activity_view_profile" />
         <activity
-            android:name=".AddFriendActivity"
+            android:name=".AddFriend.AddFriendActivity"
             android:label="@string/title_activity_add_friend" />
         <activity
             android:name=".ManageStreaks"
             android:label="@string/title_activity_manage_streaks" />
         <activity
-            android:name=".CreateGroupStreak"
+            android:name=".CreateGroupStreak.CreateGroupStreak"
             android:label="@string/title_activity_create_group_streak" />
         <activity
             android:name=".FriendStreakForfeitActivity"
@@ -47,7 +51,7 @@
             android:name=".FriendStreakRewardActivity"
             android:label="@string/title_activity_friend_streak_reward"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,11 +59,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Register.RegisterActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Login.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -67,14 +71,14 @@
             android:label="@string/title_user_feed"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".HomeActivity.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CreateSoloStreak"
+            android:name=".CreateSoloStreak.CreateSoloStreak"
             android:label="@string/title_activity_create__solo_streak" />
         <activity
-            android:name=".SoloStreakCreatedActivity"
+            android:name=".SoloStreakCreated.SoloStreakCreatedActivity"
             android:label="@string/title_activity_solo_streak_created" />
     </application>
 

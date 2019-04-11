@@ -1,9 +1,9 @@
-package com.reecekidd.streakr
+package com.reecekidd.streakr.CreateGroupStreak
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
+import com.reecekidd.streakr.R
 
 import kotlinx.android.synthetic.main.activity_create_group_streak.*
 

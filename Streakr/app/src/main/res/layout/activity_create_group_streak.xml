@@ -5,7 +5,7 @@
     android:id="@+id/createGroupStreakConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateGroupStreak">
+    tools:context=".CreateGroupStreak.CreateGroupStreak">
 
     <TextView
         android:id="@+id/createAGroupStreakTitle"
