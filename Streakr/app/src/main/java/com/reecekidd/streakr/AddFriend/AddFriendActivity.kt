@@ -13,7 +13,6 @@ import com.google.gson.GsonBuilder
 import com.reecekidd.streakr.ErrorServerResponse
 import com.reecekidd.streakr.R
 import kotlinx.android.synthetic.main.activity_add_friend.*
-import kotlinx.android.synthetic.main.activity_test.*
 import okhttp3.*
 import java.io.IOException
 
@@ -22,7 +21,7 @@ class AddFriendActivity : AppCompatActivity(), View  {
     val LOG_TAG = AddFriendActivity::class.simpleName
 
     lateinit var context: Context
-    var jsonWebToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaW5pbXVtVXNlckRhdGEiOnsiX2lkIjoiNWMzODM3ZGZiNjNmYzM0MWU0NjNjN2ViIiwidXNlck5hbWUiOiJ0ZXN0ZXIxIn0sImlhdCI6MTU1NDc4MzM0OSwiZXhwIjoxNTU1Mzg4MTQ5fQ.m5aCqhSO9zGF3HE_EbfxTAEPNTqfgCcwL5ll_LbzpKg"
+    var jsonWebToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaW5pbXVtVXNlckRhdGEiOnsiX2lkIjoiNWMzODM3ZGZiNjNmYzM0MWU0NjNjN2ViIiwidXNlck5hbWUiOiJ0ZXN0ZXIxIn0sImlhdCI6MTU1NTM5MDAzOCwiZXhwIjoxNTU1OTk0ODM4fQ.RlouRfEqsZs2d-henqyL9PH4bbliCPbuRWT918JhKrw"
 
     lateinit var userId: String
 

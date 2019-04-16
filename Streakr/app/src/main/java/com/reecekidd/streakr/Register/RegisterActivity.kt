@@ -65,7 +65,6 @@ class RegisterActivity : AppCompatActivity() {
         Log.d("Registration", "Attempting to register user")
 
         val url = "http://10.0.2.2:4040/user/register"
-
         val json = """ {
  	    "userName": "$userNameText",
           "email": "$emailText",

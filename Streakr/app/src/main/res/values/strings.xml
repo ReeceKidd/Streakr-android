@@ -101,8 +101,8 @@
     <string name="title_activity_friends">Friends </string>
     <string name="title_activity_get_users">GetUsersActivity</string>
     <string name="title_activity_test">Test</string>
-    <string name="title_activity_solo_streaks">SoloStreaksActivity</string>
-    <string name="title_activity_group_streaks">GroupStreaks</string>
+    <string name="title_activity_solo_streaks">Solo Streaks</string>
+    <string name="title_activity_group_streaks">Group Streaks</string>
 
 
 </resources>

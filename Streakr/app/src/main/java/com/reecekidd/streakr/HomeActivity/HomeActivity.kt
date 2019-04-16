@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
 import com.reecekidd.streakr.CreateGroupStreak.CreateGroupStreak
-import com.reecekidd.streakr.ManageFriends.FriendsActivity
+import com.reecekidd.streakr.Friends.FriendsActivity
 import com.reecekidd.streakr.R
 import com.reecekidd.streakr.SoloStreaks.SoloStreaksActivity
 

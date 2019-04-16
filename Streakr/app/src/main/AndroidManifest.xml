@@ -16,49 +16,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Friends.FriendsActivity"
+            android:label="@string/title_activity_friends"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".GroupStreaks.GroupStreaks"
             android:label="@string/title_activity_group_streaks"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SoloStreaks.SoloStreaksActivity"
             android:label="@string/title_activity_solo_streaks"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".AddFriend.Test"
-            android:label="@string/title_activity_test"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ManageFriends.FriendsActivity"
             android:label="@string/title_activity_friends"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GroupStreakCreatedActivity"
-            android:label="@string/title_activity_group_streak_created"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SelectFriendsForGroupStreakActivity"
-            android:label="@string/title_activity_select_friends_for_group_streak"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ViewProfileActivity"
-            android:label="@string/title_activity_view_profile" />
-        <activity
             android:name=".AddFriend.AddFriendActivity"
             android:label="@string/title_activity_add_friend" />
         <activity
-            android:name=".ManageStreaks"
-            android:label="@string/title_activity_manage_streaks" />
-        <activity
             android:name=".CreateGroupStreak.CreateGroupStreak"
             android:label="@string/title_activity_create_group_streak" />
-        <activity
-            android:name=".FriendStreakForfeitActivity"
-            android:label="@string/title_activity_friend_streak_forfeit"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".FriendStreakRewardActivity"
-            android:label="@string/title_activity_friend_streak_reward"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

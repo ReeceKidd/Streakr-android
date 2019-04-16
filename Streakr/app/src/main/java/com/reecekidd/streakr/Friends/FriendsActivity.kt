@@ -1,23 +1,24 @@
-package com.reecekidd.streakr.SoloStreaks
+package com.reecekidd.streakr.Friends
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
+import com.reecekidd.streakr.AddFriend.AddFriendActivity
 import com.reecekidd.streakr.CreateSoloStreak.CreateSoloStreakActivity
 import com.reecekidd.streakr.R
 
-import kotlinx.android.synthetic.main.activity_solo_streaks.*
+import kotlinx.android.synthetic.main.activity_friends.*
 
-class SoloStreaksActivity : AppCompatActivity() {
+class FriendsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_solo_streaks)
+        setContentView(R.layout.activity_friends)
         setSupportActionBar(toolbar)
 
-        fab_create_solo_streak.setOnClickListener { view ->
-            val intent = Intent(this.applicationContext, CreateSoloStreakActivity::class.java)
+        fab_add_friend.setOnClickListener { view ->
+            val intent = Intent(this.applicationContext, AddFriendActivity::class.java)
             this.applicationContext.startActivity(intent)
         }
     }

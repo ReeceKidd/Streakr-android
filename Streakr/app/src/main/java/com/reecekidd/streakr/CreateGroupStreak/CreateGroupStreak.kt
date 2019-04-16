@@ -20,10 +20,7 @@ class CreateGroupStreak : AppCompatActivity() {
 
 
         createGroupStreakNextButton.setOnClickListener {
-            val intent = Intent(this.applicationContext, SelectFriendsForGroupStreakActivity::class.java)
-            intent.putExtra(GROUP_STREAK_NAME_KEY, groupStreakName.text.toString())
-            intent.putExtra(GROUP_STREAK_DESCRIPTION_KEY, groupStreakDescription.text.toString())
-            this.applicationContext.startActivity(intent)
+
         }
     }
 
