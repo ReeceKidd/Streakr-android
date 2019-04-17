@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_add_friend.*
 import okhttp3.*
 import java.io.IOException
 
-class AddFriendActivity : AppCompatActivity(), View  {
+class AddFriendActivity : AppCompatActivity() {
 
     val LOG_TAG = AddFriendActivity::class.simpleName
 
@@ -32,14 +32,6 @@ class AddFriendActivity : AppCompatActivity(), View  {
         userId = "5ca8c533a4fb9c17a00519b0"
 
         getFriends().execute()
-    }
-
-    override fun showAddFriendSuccess() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun showAddFriendError() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     internal inner class getFriends : AsyncTask<Void, Void, String>() {
