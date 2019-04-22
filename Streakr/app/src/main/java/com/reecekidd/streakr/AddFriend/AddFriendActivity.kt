@@ -30,57 +30,9 @@ class AddFriendActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_friend)
         addFriendRecyclerView.layoutManager = LinearLayoutManager(this.applicationContext)
         userId = "5ca8c533a4fb9c17a00519b0"
-
-        getFriends().execute()
     }
 
-    internal inner class getFriends : AsyncTask<Void, Void, String>() {
 
-        override fun doInBackground(vararg params: Void?): String {
-            getFriendsWithSearchQuery("test")
-            return "success"
-        }
-
-    }
-
-    fun getFriendsWithSearchQuery(searchQuery: String) {
-        val baseUrl = "http://10.0.2.2:4040/users"
-        val urlWithSearchQuery = "$baseUrl?searchQuery=$searchQuery"
-        val request = Request.Builder()
-                .url(urlWithSearchQuery)
-                .get()
-                .addHeader("x-access-token", jsonWebToken)
-                .build()
-        val client = OkHttpClient()
-        client.newCall(request).enqueue(object : Callback {
-            override fun onResponse(call: Call, response: Response) {
-                if (response.isSuccessful) {
-                    val body = response?.body()?.string()
-                    Log.d(LOG_TAG, body)
-                    val gson = GsonBuilder().create()
-                    val addFriendFeed = gson.fromJson(body, AddFriendFeed::class.java)
-
-                    runOnUiThread {
-                        addFriendRecyclerView.adapter = AddFriendRecyclerViewAdapter(addFriendFeed)
-                    }
-                    return
-                }
-                val body = response.body()?.string()
-                val parsedResponse = Klaxon().parse<ErrorServerResponse>("""$body""")
-                val message = parsedResponse?.message
-                runOnUiThread {
-                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-                }
-            }
-
-            override fun onFailure(call: Call, e: IOException) {
-                Log.d(LOG_TAG, "Failed to execute request ${e.message}")
-                runOnUiThread {
-                    Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
-                }
-            }
-        })
-    }
 
     internal inner class addFriendTask: AsyncTask<String, Void, String>() {
         override fun doInBackground(vararg params: String?): String? {

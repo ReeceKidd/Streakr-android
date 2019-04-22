@@ -1,4 +1,4 @@
-package com.reecekidd.streakr.AddFriend
+package com.reecekidd.streakr.Friends
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,16 +7,16 @@ import android.view.ViewGroup
 import com.reecekidd.streakr.R
 import kotlinx.android.synthetic.main.friend_row.view.*
 
-class AddFriendFeed(val users: List<AddFriendFeedUser>)
+class FriendFeed(val users: List<Friend>)
 
-class AddFriendFeedUser(val _id: String, val userName: String)
+class Friend(val _id: String, val userName: String)
 
-class  AddFriendRecyclerViewAdapter(val addFriendFeed: AddFriendFeed): RecyclerView.Adapter<FriendViewHolder>() {
+class FriendsRecyclerViewAdapter(val friendFeed: FriendFeed): RecyclerView.Adapter<FriendViewHolder>() {
 
-    val LOG_TAG = AddFriendRecyclerViewAdapter::class.java.simpleName
+    val LOG_TAG = FriendsRecyclerViewAdapter::class.java.simpleName
 
     override fun getItemCount(): Int {
-        return addFriendFeed.users.size
+        return friendFeed.users.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FriendViewHolder {
@@ -26,13 +26,9 @@ class  AddFriendRecyclerViewAdapter(val addFriendFeed: AddFriendFeed): RecyclerV
     }
 
     override fun onBindViewHolder(holder: FriendViewHolder, position: Int) {
-    val user = addFriendFeed.users.get(position)
+    val user = friendFeed.users.get(position)
         holder?.view.userNameTextView.text = user.userName
-        holder?.view.addFriendButton.setOnClickListener {
-            AddFriendActivity().addFriendTask().execute("5ca8c533a4fb9c17a00519b0",user._id)
-        }
     }
-
 
 }
 
