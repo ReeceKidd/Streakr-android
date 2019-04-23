@@ -16,4 +16,4 @@
                 Create streak logic on the servern
                 Create logout option.
 
-Fix issue with add friends and understand why I can't pass function. 
+Fix intergration tests and add tests for defineLocationPathMiddleware
