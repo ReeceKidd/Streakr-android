@@ -17,3 +17,4 @@
                 Create logout option.
 
 Fix intergration tests and add tests for defineLocationPathMiddleware
+Fix intergration tests
