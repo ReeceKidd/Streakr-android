@@ -16,5 +16,5 @@
                 Create streak logic on the servern
                 Create logout option.
 
-Continue work intergrting agenda, get robo3t set up correctly
-to work with DB. 
+Continue working on createSoloStreak route. Using moment and the 
+timeZone information. 
