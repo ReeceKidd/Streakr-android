@@ -1,1 +1,1 @@
-Fix startdate logic
+Need to make sure completeTask is updating the start date correctly. 
